@@ -565,7 +565,7 @@
             transform: translateY(0);
         }
 
-        /* Modal Editor Styles */
+        /* Content Editor Modal Styles */
         #editorModal {
             display: none;
             position: fixed;
@@ -590,18 +590,19 @@
             border: 1px solid #ddd;
             border-radius: 8px;
             width: 90%;
-            height: 85vh;
-            max-width: 1200px;
+            height: 88vh;
+            max-width: 1000px;
             display: flex;
             flex-direction: column;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
         }
 
         .modal-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             border-bottom: 2px solid #0052CC;
             padding-bottom: 15px;
         }
@@ -609,7 +610,7 @@
         .modal-header h2 {
             color: #0052CC;
             margin: 0;
-            font-size: 1.5em;
+            font-size: 1.4em;
         }
 
         .close-btn {
@@ -631,31 +632,142 @@
             color: #000;
         }
 
-        #htmlEditor {
-            flex: 1;
-            padding: 15px;
-            font-family: 'Courier New', monospace;
-            font-size: 13px;
-            border: 1px solid #ddd;
+        .editor-info {
+            background-color: #E7F3FF;
+            border: 1px solid #B3D9FF;
             border-radius: 4px;
-            resize: none;
-            overflow: auto;
-            background-color: #f8f8f8;
-            color: #333;
-            line-height: 1.5;
+            padding: 12px;
+            margin-bottom: 15px;
+            color: #003366;
+            font-size: 0.9em;
+            display: flex;
+            gap: 10px;
+        }
+
+        .editor-sections {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
             margin-bottom: 15px;
         }
 
-        #htmlEditor:focus {
+        .editor-tabs {
+            display: flex;
+            gap: 5px;
+            border-bottom: 2px solid #e0e0e0;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 10px 15px;
+            border: none;
+            background-color: #f5f5f5;
+            color: #333;
+            cursor: pointer;
+            border-radius: 4px 4px 0 0;
+            font-weight: 500;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab-btn:hover {
+            background-color: #e8e8e8;
+        }
+
+        .tab-btn.active {
+            background-color: white;
+            color: #0052CC;
+            border-bottom-color: #0052CC;
+        }
+
+        .tab-content {
+            display: none;
+            flex: 1;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .tab-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .tab-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .tab-content::-webkit-scrollbar-thumb {
+            background: #0052CC;
+            border-radius: 4px;
+        }
+
+        .edit-field {
+            margin-bottom: 20px;
+        }
+
+        .edit-field label {
+            display: block;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+            font-size: 0.95em;
+        }
+
+        .text-input, .text-area, .select-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 0.95em;
+            color: #333;
+            box-sizing: border-box;
+        }
+
+        .text-input:focus, .text-area:focus, .select-input:focus {
             outline: none;
             border-color: #0052CC;
             box-shadow: 0 0 5px rgba(0, 82, 204, 0.2);
+        }
+
+        .text-area {
+            resize: vertical;
+            min-height: 120px;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        .select-input {
+            cursor: pointer;
+        }
+
+        small {
+            display: block;
+            color: #666;
+            font-size: 0.85em;
+            margin-top: 5px;
+        }
+
+        .section-selector {
+            margin-bottom: 15px;
+        }
+
+        #sectionEditArea {
+            border-top: 1px solid #e0e0e0;
+            padding-top: 15px;
         }
 
         .modal-buttons {
             display: flex;
             gap: 10px;
             justify-content: flex-end;
+            border-top: 1px solid #e0e0e0;
+            padding-top: 15px;
         }
 
         .modal-buttons button {
@@ -687,35 +799,24 @@
             background-color: #d0d0d0;
         }
 
-        .editor-info {
-            background-color: #FFF3CD;
-            border: 1px solid #FFE69C;
-            border-radius: 4px;
-            padding: 12px;
-            margin-bottom: 15px;
-            color: #856404;
-            font-size: 0.9em;
-            display: flex;
-            gap: 10px;
-        }
-
-        .editor-info strong {
-            color: #856404;
-        }
-
         @media (max-width: 768px) {
             .modal-content {
                 width: 95%;
-                height: 90vh;
+                height: 92vh;
                 padding: 15px;
             }
 
-            #htmlEditor {
-                font-size: 12px;
+            .editor-tabs {
+                flex-wrap: wrap;
+            }
+
+            .tab-btn {
+                font-size: 0.85em;
+                padding: 8px 12px;
             }
 
             .modal-header h2 {
-                font-size: 1.2em;
+                font-size: 1.1em;
             }
         }
 
@@ -742,7 +843,7 @@
             transform: translateY(0);
         }
 
-        /* Modal Editor Styles */
+        /* Content Editor Modal Styles */
         #editorModal {
             display: none;
             position: fixed;
@@ -767,18 +868,19 @@
             border: 1px solid #ddd;
             border-radius: 8px;
             width: 90%;
-            height: 85vh;
-            max-width: 1200px;
+            height: 88vh;
+            max-width: 1000px;
             display: flex;
             flex-direction: column;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
         }
 
         .modal-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             border-bottom: 2px solid #0052CC;
             padding-bottom: 15px;
         }
@@ -786,7 +888,7 @@
         .modal-header h2 {
             color: #0052CC;
             margin: 0;
-            font-size: 1.5em;
+            font-size: 1.4em;
         }
 
         .close-btn {
@@ -808,31 +910,142 @@
             color: #000;
         }
 
-        #htmlEditor {
-            flex: 1;
-            padding: 15px;
-            font-family: 'Courier New', monospace;
-            font-size: 13px;
-            border: 1px solid #ddd;
+        .editor-info {
+            background-color: #E7F3FF;
+            border: 1px solid #B3D9FF;
             border-radius: 4px;
-            resize: none;
-            overflow: auto;
-            background-color: #f8f8f8;
-            color: #333;
-            line-height: 1.5;
+            padding: 12px;
+            margin-bottom: 15px;
+            color: #003366;
+            font-size: 0.9em;
+            display: flex;
+            gap: 10px;
+        }
+
+        .editor-sections {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
             margin-bottom: 15px;
         }
 
-        #htmlEditor:focus {
+        .editor-tabs {
+            display: flex;
+            gap: 5px;
+            border-bottom: 2px solid #e0e0e0;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 10px 15px;
+            border: none;
+            background-color: #f5f5f5;
+            color: #333;
+            cursor: pointer;
+            border-radius: 4px 4px 0 0;
+            font-weight: 500;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab-btn:hover {
+            background-color: #e8e8e8;
+        }
+
+        .tab-btn.active {
+            background-color: white;
+            color: #0052CC;
+            border-bottom-color: #0052CC;
+        }
+
+        .tab-content {
+            display: none;
+            flex: 1;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .tab-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .tab-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .tab-content::-webkit-scrollbar-thumb {
+            background: #0052CC;
+            border-radius: 4px;
+        }
+
+        .edit-field {
+            margin-bottom: 20px;
+        }
+
+        .edit-field label {
+            display: block;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+            font-size: 0.95em;
+        }
+
+        .text-input, .text-area, .select-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 0.95em;
+            color: #333;
+            box-sizing: border-box;
+        }
+
+        .text-input:focus, .text-area:focus, .select-input:focus {
             outline: none;
             border-color: #0052CC;
             box-shadow: 0 0 5px rgba(0, 82, 204, 0.2);
+        }
+
+        .text-area {
+            resize: vertical;
+            min-height: 120px;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        .select-input {
+            cursor: pointer;
+        }
+
+        small {
+            display: block;
+            color: #666;
+            font-size: 0.85em;
+            margin-top: 5px;
+        }
+
+        .section-selector {
+            margin-bottom: 15px;
+        }
+
+        #sectionEditArea {
+            border-top: 1px solid #e0e0e0;
+            padding-top: 15px;
         }
 
         .modal-buttons {
             display: flex;
             gap: 10px;
             justify-content: flex-end;
+            border-top: 1px solid #e0e0e0;
+            padding-top: 15px;
         }
 
         .modal-buttons button {
@@ -864,35 +1077,24 @@
             background-color: #d0d0d0;
         }
 
-        .editor-info {
-            background-color: #FFF3CD;
-            border: 1px solid #FFE69C;
-            border-radius: 4px;
-            padding: 12px;
-            margin-bottom: 15px;
-            color: #856404;
-            font-size: 0.9em;
-            display: flex;
-            gap: 10px;
-        }
-
-        .editor-info strong {
-            color: #856404;
-        }
-
         @media (max-width: 768px) {
             .modal-content {
                 width: 95%;
-                height: 90vh;
+                height: 92vh;
                 padding: 15px;
             }
 
-            #htmlEditor {
-                font-size: 12px;
+            .editor-tabs {
+                flex-wrap: wrap;
+            }
+
+            .tab-btn {
+                font-size: 0.85em;
+                padding: 8px 12px;
             }
 
             .modal-header h2 {
-                font-size: 1.2em;
+                font-size: 1.1em;
             }
         }
     </style>
@@ -2081,39 +2283,241 @@
             </section>
 
 
-        <!-- EDITOR MODAL -->
+        <!-- CONTENT EDITOR MODAL -->
         <div id="editorModal" class="editor-modal">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2>📝 Edit HTML Content</h2>
+                    <h2>✏️ Edit Page Content</h2>
                     <button class="close-btn" onclick="closeEditor()">&times;</button>
                 </div>
                 <div class="editor-info">
-                    <strong>ℹ️ Note:</strong> Edit the HTML content directly. Your changes will be reflected when you click "Save & Refresh". Be careful not to break HTML structure.
+                    <strong>ℹ️ Easy Editing:</strong> Select a section below and edit its content. Changes are saved automatically when you click "Save Changes".
                 </div>
-                <textarea id="htmlEditor" placeholder="Paste or edit HTML content here..."></textarea>
+                
+                <div class="editor-sections">
+                    <div class="editor-tabs">
+                        <button class="tab-btn active" onclick="switchTab('header')">📄 Header</button>
+                        <button class="tab-btn" onclick="switchTab('navigation')">🧭 Navigation</button>
+                        <button class="tab-btn" onclick="switchTab('content')">📝 Content Sections</button>
+                        <button class="tab-btn" onclick="switchTab('footer')">📌 Footer</button>
+                    </div>
+
+                    <!-- Header Tab -->
+                    <div id="header-tab" class="tab-content active">
+                        <div class="edit-field">
+                            <label>Page Title (H1)</label>
+                            <input type="text" id="pageTitle" placeholder="ExamRoom.AI Job Aid" class="text-input">
+                            <small>Main heading at the top of the page</small>
+                        </div>
+                        <div class="edit-field">
+                            <label>Subtitle</label>
+                            <input type="text" id="pageSubtitle" placeholder="Comprehensive Guide for Recruiters & HR Consultants" class="text-input">
+                            <small>Brief description under the title</small>
+                        </div>
+                        <div class="edit-field">
+                            <label>Last Updated Date</label>
+                            <input type="text" id="lastUpdated" placeholder="March 23, 2026" class="text-input">
+                            <small>When was this guide last updated?</small>
+                        </div>
+                        <div class="edit-field">
+                            <label>Target Audience</label>
+                            <input type="text" id="targetAudience" placeholder="Recruiters & HR Consultants" class="text-input">
+                            <small>Who should read this guide?</small>
+                        </div>
+                        <div class="edit-field">
+                            <label>Version Number</label>
+                            <input type="text" id="versionNumber" placeholder="1.0" class="text-input">
+                            <small>Current version of the guide</small>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Tab -->
+                    <div id="navigation-tab" class="tab-content">
+                        <div class="edit-field">
+                            <label>Navigation Title</label>
+                            <input type="text" id="navTitle" placeholder="📖 Quick Navigation" class="text-input">
+                            <small>Title shown above navigation buttons</small>
+                        </div>
+                        <div class="navigation-editor">
+                            <div class="edit-field">
+                                <label>Navigation Buttons</label>
+                                <div id="navButtons" class="nav-buttons-list"></div>
+                                <small>Edit button labels below (one per line)</small>
+                                <textarea id="navButtonsList" placeholder="Purpose&#10;Platforms&#10;Decision Guide&#10;Workflow&#10;Best Practices&#10;FAQ&#10;Startup Questions" class="text-area"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content Tab -->
+                    <div id="content-tab" class="tab-content">
+                        <div class="section-selector">
+                            <label>Select Section to Edit:</label>
+                            <select id="sectionSelector" onchange="loadSectionContent()" class="select-input">
+                                <option value="">-- Choose a section --</option>
+                                <option value="purpose">Purpose</option>
+                                <option value="platforms">Platforms</option>
+                                <option value="decision-guide">Decision Guide</option>
+                                <option value="workflow">Workflow</option>
+                                <option value="best-practices">Best Practices</option>
+                                <option value="faq">FAQ</option>
+                                <option value="startup-questions">Startup Questions</option>
+                            </select>
+                        </div>
+                        <div id="sectionEditArea" style="display: none;">
+                            <div class="edit-field">
+                                <label id="sectionTitleLabel">Section Title</label>
+                                <input type="text" id="sectionTitle" placeholder="Section Title" class="text-input">
+                            </div>
+                            <div class="edit-field">
+                                <label id="sectionSubtitleLabel">Section Subtitle</label>
+                                <input type="text" id="sectionSubtitle" placeholder="Section description" class="text-input">
+                            </div>
+                            <div class="edit-field">
+                                <label>Section Content</label>
+                                <textarea id="sectionContent" placeholder="Enter section content here..." class="text-area"></textarea>
+                                <small>You can use basic formatting: Keep it as plain text or HTML tags like &lt;strong&gt;, &lt;em&gt;, &lt;ul&gt;, &lt;li&gt;</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Footer Tab -->
+                    <div id="footer-tab" class="tab-content">
+                        <div class="edit-field">
+                            <label>Footer Copyright/Tagline</label>
+                            <input type="text" id="footerTagline" placeholder="ExamRoom.AI Job Aid - Recruiter & HR Consultant Guide" class="text-input">
+                            <small>Main footer message</small>
+                        </div>
+                        <div class="edit-field">
+                            <label>Support Contact Info</label>
+                            <input type="text" id="footerContact" placeholder="Questions? Contact your HR or Recruiting Operations team for support." class="text-input">
+                            <small>How to reach for support</small>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="modal-buttons">
                     <button class="cancel-btn" onclick="closeEditor()">Cancel</button>
-                    <button class="save-btn" onclick="saveChanges()">💾 Save & Refresh</button>
+                    <button class="save-btn" onclick="saveContentChanges()">💾 Save Changes</button>
                 </div>
             </div>
         </div>
 
         
-        <!-- EDITOR MODAL -->
+        <!-- CONTENT EDITOR MODAL -->
         <div id="editorModal" class="editor-modal">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2>📝 Edit HTML Content</h2>
+                    <h2>✏️ Edit Page Content</h2>
                     <button class="close-btn" onclick="closeEditor()">&times;</button>
                 </div>
                 <div class="editor-info">
-                    <strong>ℹ️ Note:</strong> Edit the HTML content directly. Your changes will be reflected when you click "Save & Refresh". Be careful not to break HTML structure.
+                    <strong>ℹ️ Easy Editing:</strong> Select a section below and edit its content. Changes are saved automatically when you click "Save Changes".
                 </div>
-                <textarea id="htmlEditor" placeholder="Paste or edit HTML content here..."></textarea>
+                
+                <div class="editor-sections">
+                    <div class="editor-tabs">
+                        <button class="tab-btn active" onclick="switchTab('header')">📄 Header</button>
+                        <button class="tab-btn" onclick="switchTab('navigation')">🧭 Navigation</button>
+                        <button class="tab-btn" onclick="switchTab('content')">📝 Content Sections</button>
+                        <button class="tab-btn" onclick="switchTab('footer')">📌 Footer</button>
+                    </div>
+
+                    <!-- Header Tab -->
+                    <div id="header-tab" class="tab-content active">
+                        <div class="edit-field">
+                            <label>Page Title (H1)</label>
+                            <input type="text" id="pageTitle" placeholder="ExamRoom.AI Job Aid" class="text-input">
+                            <small>Main heading at the top of the page</small>
+                        </div>
+                        <div class="edit-field">
+                            <label>Subtitle</label>
+                            <input type="text" id="pageSubtitle" placeholder="Comprehensive Guide for Recruiters & HR Consultants" class="text-input">
+                            <small>Brief description under the title</small>
+                        </div>
+                        <div class="edit-field">
+                            <label>Last Updated Date</label>
+                            <input type="text" id="lastUpdated" placeholder="March 23, 2026" class="text-input">
+                            <small>When was this guide last updated?</small>
+                        </div>
+                        <div class="edit-field">
+                            <label>Target Audience</label>
+                            <input type="text" id="targetAudience" placeholder="Recruiters & HR Consultants" class="text-input">
+                            <small>Who should read this guide?</small>
+                        </div>
+                        <div class="edit-field">
+                            <label>Version Number</label>
+                            <input type="text" id="versionNumber" placeholder="1.0" class="text-input">
+                            <small>Current version of the guide</small>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Tab -->
+                    <div id="navigation-tab" class="tab-content">
+                        <div class="edit-field">
+                            <label>Navigation Title</label>
+                            <input type="text" id="navTitle" placeholder="📖 Quick Navigation" class="text-input">
+                            <small>Title shown above navigation buttons</small>
+                        </div>
+                        <div class="navigation-editor">
+                            <div class="edit-field">
+                                <label>Navigation Buttons</label>
+                                <div id="navButtons" class="nav-buttons-list"></div>
+                                <small>Edit button labels below (one per line)</small>
+                                <textarea id="navButtonsList" placeholder="Purpose&#10;Platforms&#10;Decision Guide&#10;Workflow&#10;Best Practices&#10;FAQ&#10;Startup Questions" class="text-area"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content Tab -->
+                    <div id="content-tab" class="tab-content">
+                        <div class="section-selector">
+                            <label>Select Section to Edit:</label>
+                            <select id="sectionSelector" onchange="loadSectionContent()" class="select-input">
+                                <option value="">-- Choose a section --</option>
+                                <option value="purpose">Purpose</option>
+                                <option value="platforms">Platforms</option>
+                                <option value="decision-guide">Decision Guide</option>
+                                <option value="workflow">Workflow</option>
+                                <option value="best-practices">Best Practices</option>
+                                <option value="faq">FAQ</option>
+                                <option value="startup-questions">Startup Questions</option>
+                            </select>
+                        </div>
+                        <div id="sectionEditArea" style="display: none;">
+                            <div class="edit-field">
+                                <label id="sectionTitleLabel">Section Title</label>
+                                <input type="text" id="sectionTitle" placeholder="Section Title" class="text-input">
+                            </div>
+                            <div class="edit-field">
+                                <label id="sectionSubtitleLabel">Section Subtitle</label>
+                                <input type="text" id="sectionSubtitle" placeholder="Section description" class="text-input">
+                            </div>
+                            <div class="edit-field">
+                                <label>Section Content</label>
+                                <textarea id="sectionContent" placeholder="Enter section content here..." class="text-area"></textarea>
+                                <small>You can use basic formatting: Keep it as plain text or HTML tags like &lt;strong&gt;, &lt;em&gt;, &lt;ul&gt;, &lt;li&gt;</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Footer Tab -->
+                    <div id="footer-tab" class="tab-content">
+                        <div class="edit-field">
+                            <label>Footer Copyright/Tagline</label>
+                            <input type="text" id="footerTagline" placeholder="ExamRoom.AI Job Aid - Recruiter & HR Consultant Guide" class="text-input">
+                            <small>Main footer message</small>
+                        </div>
+                        <div class="edit-field">
+                            <label>Support Contact Info</label>
+                            <input type="text" id="footerContact" placeholder="Questions? Contact your HR or Recruiting Operations team for support." class="text-input">
+                            <small>How to reach for support</small>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="modal-buttons">
                     <button class="cancel-btn" onclick="closeEditor()">Cancel</button>
-                    <button class="save-btn" onclick="saveChanges()">💾 Save & Refresh</button>
+                    <button class="save-btn" onclick="saveContentChanges()">💾 Save Changes</button>
                 </div>
             </div>
         </div>
@@ -2169,13 +2573,13 @@
             }
         }
 
-        // Editor Functions
+        // Content Editor Functions
         function openEditor() {
-            const htmlEditor = document.getElementById('htmlEditor');
             const modal = document.getElementById('editorModal');
-            htmlEditor.value = document.documentElement.outerHTML;
+            loadHeaderContent();
+            loadNavigationContent();
+            loadFooterContent();
             modal.style.display = 'block';
-            htmlEditor.focus();
         }
 
         function closeEditor() {
@@ -2183,40 +2587,122 @@
             modal.style.display = 'none';
         }
 
-        function saveChanges() {
-            const htmlEditor = document.getElementById('htmlEditor');
-            const newContent = htmlEditor.value;
-            
-            if (!newContent.trim()) {
-                alert('Error: HTML content cannot be empty!');
+        function switchTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Show selected tab
+            document.getElementById(tabName + '-tab').classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        function loadHeaderContent() {
+            document.getElementById('pageTitle').value = document.querySelector('header h1')?.textContent || '';
+            document.getElementById('pageSubtitle').value = document.querySelector('header .subtitle')?.textContent || '';
+            document.getElementById('lastUpdated').value = document.querySelector('.metadata span:first-child')?.textContent.replace('📅 Last Updated: ', '') || '';
+            document.getElementById('targetAudience').value = document.querySelector('.metadata span:nth-child(2)')?.textContent.replace('👥 Target: ', '') || '';
+            document.getElementById('versionNumber').value = document.querySelector('.metadata span:nth-child(3)')?.textContent.replace('🎯 Version: ', '') || '';
+        }
+
+        function loadNavigationContent() {
+            document.getElementById('navTitle').value = document.querySelector('.nav-title')?.textContent || '';
+            const navButtons = Array.from(document.querySelectorAll('.nav-btn')).map(btn => btn.textContent.trim()).join('\n');
+            document.getElementById('navButtonsList').value = navButtons;
+        }
+
+        function loadFooterContent() {
+            const footerP = document.querySelectorAll('footer p');
+            document.getElementById('footerTagline').value = footerP[0]?.textContent.replace(/^[🎯✉️]\s*/, '') || '';
+            document.getElementById('footerContact').value = footerP[footerP.length - 1]?.textContent || '';
+        }
+
+        function loadSectionContent() {
+            const sectionId = document.getElementById('sectionSelector').value;
+            if (!sectionId) {
+                document.getElementById('sectionEditArea').style.display = 'none';
                 return;
             }
 
+            const section = document.querySelector(`section#${sectionId}`);
+            if (!section) return;
+
+            document.getElementById('sectionEditArea').style.display = 'block';
+            document.getElementById('sectionTitle').value = section.querySelector('h2')?.textContent || '';
+            document.getElementById('sectionSubtitle').value = section.querySelector('.section-subtitle')?.textContent || '';
+            
+            // Get content without the title and subtitle
+            let content = '';
+            const h2 = section.querySelector('h2');
+            if (h2 && h2.nextElementSibling) {
+                let elem = h2.nextElementSibling;
+                while (elem) {
+                    if (elem.className !== 'section-subtitle') {
+                        content += elem.outerHTML + '\n';
+                    }
+                    elem = elem.nextElementSibling;
+                }
+            }
+            document.getElementById('sectionContent').value = content;
+        }
+
+        function saveContentChanges() {
+            const tab = document.querySelector('.tab-btn.active').textContent;
+
             try {
-                // Validate basic HTML structure
-                if (!newContent.includes('<html') || !newContent.includes('</html>')) {
-                    alert('Warning: HTML structure may be incomplete. Save anyway?');
+                if (tab.includes('Header')) {
+                    document.querySelector('header h1').textContent = document.getElementById('pageTitle').value;
+                    document.querySelector('header .subtitle').textContent = document.getElementById('pageSubtitle').value;
+                    const metaSpans = document.querySelectorAll('.metadata span');
+                    metaSpans[0].textContent = '📅 Last Updated: ' + document.getElementById('lastUpdated').value;
+                    metaSpans[1].textContent = '👥 Target: ' + document.getElementById('targetAudience').value;
+                    metaSpans[2].textContent = '🎯 Version: ' + document.getElementById('versionNumber').value;
+                }
+                
+                if (tab.includes('Navigation')) {
+                    document.querySelector('.nav-title').textContent = document.getElementById('navTitle').value;
+                    const buttons = document.querySelectorAll('.nav-btn');
+                    const newLabels = document.getElementById('navButtonsList').value.split('\n').map(s => s.trim()).filter(s => s);
+                    buttons.forEach((btn, index) => {
+                        if (newLabels[index]) {
+                            btn.textContent = newLabels[index];
+                        }
+                    });
+                }
+                
+                if (tab.includes('Content')) {
+                    const sectionId = document.getElementById('sectionSelector').value;
+                    if (sectionId) {
+                        const section = document.querySelector(`section#${sectionId}`);
+                        const newTitle = document.getElementById('sectionTitle').value;
+                        const newSubtitle = document.getElementById('sectionSubtitle').value;
+                        
+                        section.querySelector('h2').textContent = newTitle;
+                        let subtitleEl = section.querySelector('.section-subtitle');
+                        if (!subtitleEl && newSubtitle) {
+                            subtitleEl = document.createElement('p');
+                            subtitleEl.className = 'section-subtitle';
+                            section.insertBefore(subtitleEl, section.querySelector('h3') || section.children[2]);
+                        }
+                        if (subtitleEl) {
+                            subtitleEl.textContent = newSubtitle;
+                        }
+                    }
+                }
+                
+                if (tab.includes('Footer')) {
+                    const footerP = document.querySelectorAll('footer p');
+                    footerP[0].textContent = '🎯 ' + document.getElementById('footerTagline').value;
+                    footerP[footerP.length - 1].textContent = document.getElementById('footerContact').value;
                 }
 
-                // Create a blob and trigger download
-                const blob = new Blob([newContent], { type: 'text/html' });
-                const url = window.URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = 'ExamRoom_Job_Aid_edited.html';
-                document.body.appendChild(a);
-                a.click();
-                window.URL.revokeObjectURL(url);
-                document.body.removeChild(a);
-
-                alert('✅ Changes saved! The edited file has been downloaded as "ExamRoom_Job_Aid_edited.html". Replace your original file with this updated version.');
+                alert('✅ Changes applied to the page! Your edits are now visible.');
                 closeEditor();
 
-                // Reload the current view to show updated content
-                const tempContainer = document.createElement('div');
-                tempContainer.innerHTML = newContent;
-                document.body.innerHTML = newContent;
-                
             } catch (error) {
                 alert('Error saving changes: ' + error.message);
             }
@@ -2238,13 +2724,13 @@
         });
 
 
-        // Editor Functions
+        // Content Editor Functions
         function openEditor() {
-            const htmlEditor = document.getElementById('htmlEditor');
             const modal = document.getElementById('editorModal');
-            htmlEditor.value = document.documentElement.outerHTML;
+            loadHeaderContent();
+            loadNavigationContent();
+            loadFooterContent();
             modal.style.display = 'block';
-            htmlEditor.focus();
         }
 
         function closeEditor() {
@@ -2252,40 +2738,122 @@
             modal.style.display = 'none';
         }
 
-        function saveChanges() {
-            const htmlEditor = document.getElementById('htmlEditor');
-            const newContent = htmlEditor.value;
-            
-            if (!newContent.trim()) {
-                alert('Error: HTML content cannot be empty!');
+        function switchTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Show selected tab
+            document.getElementById(tabName + '-tab').classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        function loadHeaderContent() {
+            document.getElementById('pageTitle').value = document.querySelector('header h1')?.textContent || '';
+            document.getElementById('pageSubtitle').value = document.querySelector('header .subtitle')?.textContent || '';
+            document.getElementById('lastUpdated').value = document.querySelector('.metadata span:first-child')?.textContent.replace('📅 Last Updated: ', '') || '';
+            document.getElementById('targetAudience').value = document.querySelector('.metadata span:nth-child(2)')?.textContent.replace('👥 Target: ', '') || '';
+            document.getElementById('versionNumber').value = document.querySelector('.metadata span:nth-child(3)')?.textContent.replace('🎯 Version: ', '') || '';
+        }
+
+        function loadNavigationContent() {
+            document.getElementById('navTitle').value = document.querySelector('.nav-title')?.textContent || '';
+            const navButtons = Array.from(document.querySelectorAll('.nav-btn')).map(btn => btn.textContent.trim()).join('\n');
+            document.getElementById('navButtonsList').value = navButtons;
+        }
+
+        function loadFooterContent() {
+            const footerP = document.querySelectorAll('footer p');
+            document.getElementById('footerTagline').value = footerP[0]?.textContent.replace(/^[🎯✉️]\s*/, '') || '';
+            document.getElementById('footerContact').value = footerP[footerP.length - 1]?.textContent || '';
+        }
+
+        function loadSectionContent() {
+            const sectionId = document.getElementById('sectionSelector').value;
+            if (!sectionId) {
+                document.getElementById('sectionEditArea').style.display = 'none';
                 return;
             }
 
+            const section = document.querySelector(`section#${sectionId}`);
+            if (!section) return;
+
+            document.getElementById('sectionEditArea').style.display = 'block';
+            document.getElementById('sectionTitle').value = section.querySelector('h2')?.textContent || '';
+            document.getElementById('sectionSubtitle').value = section.querySelector('.section-subtitle')?.textContent || '';
+            
+            // Get content without the title and subtitle
+            let content = '';
+            const h2 = section.querySelector('h2');
+            if (h2 && h2.nextElementSibling) {
+                let elem = h2.nextElementSibling;
+                while (elem) {
+                    if (elem.className !== 'section-subtitle') {
+                        content += elem.outerHTML + '\n';
+                    }
+                    elem = elem.nextElementSibling;
+                }
+            }
+            document.getElementById('sectionContent').value = content;
+        }
+
+        function saveContentChanges() {
+            const tab = document.querySelector('.tab-btn.active').textContent;
+
             try {
-                // Validate basic HTML structure
-                if (!newContent.includes('<html') || !newContent.includes('</html>')) {
-                    alert('Warning: HTML structure may be incomplete. Save anyway?');
+                if (tab.includes('Header')) {
+                    document.querySelector('header h1').textContent = document.getElementById('pageTitle').value;
+                    document.querySelector('header .subtitle').textContent = document.getElementById('pageSubtitle').value;
+                    const metaSpans = document.querySelectorAll('.metadata span');
+                    metaSpans[0].textContent = '📅 Last Updated: ' + document.getElementById('lastUpdated').value;
+                    metaSpans[1].textContent = '👥 Target: ' + document.getElementById('targetAudience').value;
+                    metaSpans[2].textContent = '🎯 Version: ' + document.getElementById('versionNumber').value;
+                }
+                
+                if (tab.includes('Navigation')) {
+                    document.querySelector('.nav-title').textContent = document.getElementById('navTitle').value;
+                    const buttons = document.querySelectorAll('.nav-btn');
+                    const newLabels = document.getElementById('navButtonsList').value.split('\n').map(s => s.trim()).filter(s => s);
+                    buttons.forEach((btn, index) => {
+                        if (newLabels[index]) {
+                            btn.textContent = newLabels[index];
+                        }
+                    });
+                }
+                
+                if (tab.includes('Content')) {
+                    const sectionId = document.getElementById('sectionSelector').value;
+                    if (sectionId) {
+                        const section = document.querySelector(`section#${sectionId}`);
+                        const newTitle = document.getElementById('sectionTitle').value;
+                        const newSubtitle = document.getElementById('sectionSubtitle').value;
+                        
+                        section.querySelector('h2').textContent = newTitle;
+                        let subtitleEl = section.querySelector('.section-subtitle');
+                        if (!subtitleEl && newSubtitle) {
+                            subtitleEl = document.createElement('p');
+                            subtitleEl.className = 'section-subtitle';
+                            section.insertBefore(subtitleEl, section.querySelector('h3') || section.children[2]);
+                        }
+                        if (subtitleEl) {
+                            subtitleEl.textContent = newSubtitle;
+                        }
+                    }
+                }
+                
+                if (tab.includes('Footer')) {
+                    const footerP = document.querySelectorAll('footer p');
+                    footerP[0].textContent = '🎯 ' + document.getElementById('footerTagline').value;
+                    footerP[footerP.length - 1].textContent = document.getElementById('footerContact').value;
                 }
 
-                // Create a blob and trigger download
-                const blob = new Blob([newContent], { type: 'text/html' });
-                const url = window.URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = 'ExamRoom_Job_Aid_edited.html';
-                document.body.appendChild(a);
-                a.click();
-                window.URL.revokeObjectURL(url);
-                document.body.removeChild(a);
-
-                alert('✅ Changes saved! The edited file has been downloaded as "ExamRoom_Job_Aid_edited.html". Replace your original file with this updated version.');
+                alert('✅ Changes applied to the page! Your edits are now visible.');
                 closeEditor();
 
-                // Reload the current view to show updated content
-                const tempContainer = document.createElement('div');
-                tempContainer.innerHTML = newContent;
-                document.body.innerHTML = newContent;
-                
             } catch (error) {
                 alert('Error saving changes: ' + error.message);
             }
