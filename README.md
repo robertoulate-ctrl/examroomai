@@ -16,12 +16,18 @@ This repository provides complete documentation for implementing ExamRoom.AI in 
 ```
 examroomai/
 ├── README.md                               # This file
-├── ExamRoom_Job_Aid.html                  # Interactive HTML job aid (start here!)
+├── requirements.txt                        # Python dependencies
+├── ExamRoom_Job_Aid.html                  # Interactive HTML job aid
 ├── examroom_ai_expert_knowledge.json      # Comprehensive platform knowledge base
 ├── job_aid_template_schema.json           # Reusable template structure
 ├── ExamRoom.json                          # Platform comparison data
+├── Startup Questions.xlsx                 # Configuration source file
+├── startup_questions_config.json          # Generated test configuration
+├── scripts/
+│   └── excel_to_json_converter.py        # Excel to JSON conversion tool
 └── docs/
-    └── SETUP.md                           # Setup and deployment guide
+    ├── SETUP.md                           # Setup and deployment guide
+    └── EXCEL_TO_JSON_INTEGRATION.md       # Integration feature documentation
 ```
 
 ## 🚀 Quick Start
@@ -85,6 +91,7 @@ The comprehensive knowledge base covers:
 
 - **HTML**: Interactive job aid with collapsible sections, decision matrices, and workflow visualizations
 - **JSON**: All knowledge bases and schemas in JSON format for easy integration
+- **Python**: Conversion scripts for Excel-to-JSON transformation and API integration
 
 ## 🎨 Design
 
@@ -102,6 +109,38 @@ The interactive job aid features:
   - Sticky navigation
 
 - **Responsive Layout**: Works on desktop, tablet, and mobile devices
+
+## 🔗 Excel-to-JSON Integration Feature
+
+Convert ExamRoom.AI startup configuration Excel files to structured JSON for better data management and API integration.
+
+### Quick Start
+
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Convert Excel to JSON
+python3 scripts/excel_to_json_converter.py
+```
+
+This generates `startup_questions_config.json` with organized test rules:
+- Organization configuration
+- Platform settings
+- Exam parameters
+- Proctoring rules
+- Check-in procedures
+- Technical requirements
+
+### Features
+
+✅ **Automated Conversion**: Excel → JSON transformation
+✅ **Categorized Rules**: Organized by configuration type
+✅ **Structure Validation**: Diagnostic analysis tools
+✅ **API Ready**: JSON format for ExamRoom.AI integration
+✅ **Version Control**: Track configuration changes
+
+📖 **[Full Documentation](docs/EXCEL_TO_JSON_INTEGRATION.md)**
 
 ## 🔧 Technical Details
 

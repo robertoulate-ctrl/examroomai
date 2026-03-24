@@ -1,0 +1,434 @@
+{
+  "metadata": {
+    "source_file": "Startup Questions.xlsx",
+    "conversion_date": "2026-03-23T21:13:41.629319",
+    "converter_version": "1.0",
+    "description": "ExamRoom.AI Startup Questions - Test Rules Configuration"
+  },
+  "test_configuration": {
+    "organization_info": {
+      "How would you like your organization's name to appear on ExamRoom?": {
+        "answer": null,
+        "comments": null
+      },
+      "Do the candidates or the organization pay for the remote proctoring fees?": {
+        "answer": null,
+        "comments": null
+      },
+      "Can ExamRoom create the candidate ID or does the organization prefer to provide one?": {
+        "answer": null,
+        "comments": null
+      }
+    },
+    "contact_info": {
+      "Contacts that ExamRoom Team can reach out to for assistance/ clarifications": {
+        "answer": null,
+        "comments": null
+      },
+      "What is the Proctor response for the following scenarios?  (i.e. Shut down the exam, issue warning, contact Admin, other)": {
+        "answer": null,
+        "comments": null
+      }
+    },
+    "platform_config": {
+      "What is your test assessment platform?": {
+        "answer": null,
+        "comments": null
+      },
+      "Test console URL": {
+        "answer": null,
+        "comments": null
+      },
+      "What is the URL for the exam?": {
+        "answer": null,
+        "comments": null
+      }
+    },
+    "exam_settings": {
+      "Will the exam timer stop if the candidate gets disconnected?": {
+        "answer": null,
+        "comments": null
+      },
+      "Will the answers be saved if the candidate gets disconnected during the exam?": {
+        "answer": null,
+        "comments": null
+      }
+    },
+    "proctoring_config": {
+      "Will proctor be required to provide test access credentials (passcode, access code, credentials, etc.)? - If Yes please specify.": {
+        "answer": null,
+        "comments": null
+      },
+      "What is the proctor response for the following events? \n  (Our technical support will do everything we can to fix their system)": {
+        "answer": null,
+        "comments": null
+      }
+    },
+    "other_settings": {
+      "Testing Rules:": {
+        "answer": null,
+        "comments": null
+      },
+      "Is eligibility required before scheduling or attempting to schedule an exam?": {
+        "answer": null,
+        "comments": null
+      },
+      "Will the eligibility be accessed from a database?": {
+        "answer": null,
+        "comments": null
+      },
+      "Will the eligibility be provided from an LMS (which one)?": {
+        "answer": null,
+        "comments": null
+      },
+      "Will you notify us directly of new eligibilities?": {
+        "answer": null,
+        "comments": null
+      },
+      "Check-in Process (Identification):": {
+        "answer": null,
+        "comments": null
+      },
+      "Government Issued ID (photo or not)": {
+        "answer": null,
+        "comments": null
+      },
+      "Employee Badging": {
+        "answer": null,
+        "comments": null
+      },
+      "Credit Card": {
+        "answer": null,
+        "comments": null
+      },
+      "Other": {
+        "answer": null,
+        "comments": null
+      },
+      "Candidate photo": {
+        "answer": null,
+        "comments": null
+      },
+      "What if the candidate has an expired ID?": {
+        "answer": null,
+        "comments": null
+      },
+      "Other check-in procedures:": {
+        "answer": null,
+        "comments": null
+      },
+      "Do you require a room scan during onboarding?": {
+        "answer": null,
+        "comments": null
+      },
+      "Do you require the use of the ExamRoom 360 app?": {
+        "answer": null,
+        "comments": null
+      },
+      "If there are issues starting the ExamRoom 360 app post troubleshooting? Can candidates test without the app?": {
+        "answer": null,
+        "comments": null
+      },
+      "Do you require the ExamRoom.AI browser extension?": {
+        "answer": null,
+        "comments": null
+      },
+      "Do you require candidates to pre-register their identity prior to the exam?": {
+        "answer": null,
+        "comments": null
+      },
+      "Examination:": {
+        "answer": null,
+        "comments": null
+      },
+      "What is the exam name?": {
+        "answer": null,
+        "comments": null
+      },
+      "How will the candidate's information be provided to ExamRoom? (Candidate creates personal account or Client provides information for account setup?)": {
+        "answer": null,
+        "comments": null
+      },
+      "If candidate information provided by the Client:": {
+        "answer": null,
+        "comments": null
+      },
+      "Will ExamRoom link to API or database for information?": {
+        "answer": null,
+        "comments": null
+      },
+      "Do you prefer to email candidate information directly to ExamRoom?": {
+        "answer": null,
+        "comments": null
+      },
+      "Exam Rules:": {
+        "answer": null,
+        "comments": null
+      },
+      "Are drinks allowed? - If Yes Please Specify": {
+        "answer": null,
+        "comments": null
+      },
+      "Is smoking allowed?": {
+        "answer": null,
+        "comments": null
+      },
+      "Bathroom breaks - If Yes, please specify the number and the duration of the breaks:": {
+        "answer": null,
+        "comments": null
+      },
+      "Additional browser references- If Yes, please specify:": {
+        "answer": null,
+        "comments": null
+      },
+      "Permitted references- If Yes, please specify:": {
+        "answer": null,
+        "comments": null
+      },
+      "Permitted books- If Yes, please specify:": {
+        "answer": null,
+        "comments": null
+      },
+      "Calculator permitted- If Yes, please specify the type:": {
+        "answer": null,
+        "comments": null
+      },
+      "Scratch paper - If Yes, how many": {
+        "answer": null,
+        "comments": null
+      },
+      "White board": {
+        "answer": null,
+        "comments": null
+      },
+      "Others (if any)": {
+        "answer": null,
+        "comments": null
+      },
+      "Can candidates test outside of their home?": {
+        "answer": null,
+        "comments": null
+      },
+      "Should candidates test in an isolated room?": {
+        "answer": null,
+        "comments": null
+      },
+      "Is ExamRoom allowed to reschedule the candidates exam per the candidate request?": {
+        "answer": null,
+        "comments": null
+      },
+      "Conditions / parameters to be considered for rescheduling ": {
+        "answer": null,
+        "comments": null
+      },
+      "What is the duration required between retests?": {
+        "answer": null,
+        "comments": null
+      },
+      "Scheduling/No Show Follow Up:": {
+        "answer": null,
+        "comments": null
+      },
+      "Issue Response/ What If scenarios:": {
+        "answer": null,
+        "comments": null
+      },
+      "Describe the candidate process flow from the time they are approved to take the exam (if authorization is required) until the time they complete.": {
+        "answer": null,
+        "comments": null
+      },
+      "Notes / Special Accomodations": {
+        "answer": null,
+        "comments": null
+      }
+    }
+  },
+  "additional_exams_info": [
+    {
+      "row_number": 4,
+      "question": "Other check-in procedures:",
+      "answer": null,
+      "comments": null
+    },
+    {
+      "row_number": 5,
+      "question": "Do you require a room scan during onboarding?",
+      "answer": null,
+      "comments": null
+    },
+    {
+      "row_number": 6,
+      "question": "Do you require the ExamRoom 360 App?",
+      "answer": null,
+      "comments": null
+    },
+    {
+      "row_number": 7,
+      "question": "If there are issues starting the ExamRoom 360 app post troubleshooting? Can candidates test without the app?",
+      "answer": null,
+      "comments": null
+    },
+    {
+      "row_number": 8,
+      "question": "Do you require the ExamRoom.AI browser extension?",
+      "answer": null,
+      "comments": null
+    },
+    {
+      "row_number": 9,
+      "question": "Do you require candidates to pre-register their identity prior to the exam?",
+      "answer": null,
+      "comments": null
+    },
+    {
+      "row_number": 10,
+      "question": "Examination:",
+      "answer": null,
+      "comments": null
+    },
+    {
+      "row_number": 11,
+      "question": "What is the exam name?",
+      "answer": null,
+      "comments": null
+    },
+    {
+      "row_number": 12,
+      "question": "What is the URL for the exam?",
+      "answer": null,
+      "comments": null
+    },
+    {
+      "row_number": 13,
+      "question": "How will the candidate's information be provided to ExamRoom? (Candidate creates personal account or Client provides information for account setup?)",
+      "answer": null,
+      "comments": null
+    },
+    {
+      "row_number": 14,
+      "question": "If candidate information provided by the Client:",
+      "answer": null,
+      "comments": null
+    },
+    {
+      "row_number": 15,
+      "question": "Will ExamRoom link to API or database for information?",
+      "answer": null,
+      "comments": null
+    },
+    {
+      "row_number": 16,
+      "question": "Do you prefer to email candidate information directly to ExamRoom?",
+      "answer": null,
+      "comments": null
+    },
+    {
+      "row_number": 17,
+      "question": "Exam Rules:",
+      "answer": null,
+      "comments": null
+    },
+    {
+      "row_number": 18,
+      "question": "Are drinks allowed? - If Yes Please Specify",
+      "answer": null,
+      "comments": null
+    },
+    {
+      "row_number": 19,
+      "question": "Is smoking allowed?",
+      "answer": null,
+      "comments": null
+    },
+    {
+      "row_number": 20,
+      "question": "Bathroom breaks - If Yes, please specify the number and the duration of the breaks:",
+      "answer": null,
+      "comments": null
+    },
+    {
+      "row_number": 21,
+      "question": "Additional browser references- If Yes, please specify:",
+      "answer": null,
+      "comments": null
+    },
+    {
+      "row_number": 22,
+      "question": "Permitted references- If Yes, please specify:",
+      "answer": null,
+      "comments": null
+    },
+    {
+      "row_number": 23,
+      "question": "Permitted books- If Yes, please specify:",
+      "answer": null,
+      "comments": null
+    },
+    {
+      "row_number": 24,
+      "question": "Calculator permitted- If Yes, please specify the type:",
+      "answer": null,
+      "comments": null
+    },
+    {
+      "row_number": 25,
+      "question": "Scratch paper - If Yes, how many",
+      "answer": null,
+      "comments": null
+    },
+    {
+      "row_number": 26,
+      "question": "White board",
+      "answer": null,
+      "comments": null
+    },
+    {
+      "row_number": 27,
+      "question": "Others (if any)",
+      "answer": null,
+      "comments": null
+    },
+    {
+      "row_number": 28,
+      "question": "Can candidates test outside of their home?",
+      "answer": null,
+      "comments": null
+    },
+    {
+      "row_number": 29,
+      "question": "Should candidates test in an isolated room?",
+      "answer": null,
+      "comments": null
+    },
+    {
+      "row_number": 30,
+      "question": "Is ExamRoom allowed to reschedule the candidates exam per the candidate request?",
+      "answer": null,
+      "comments": null
+    },
+    {
+      "row_number": 31,
+      "question": "Conditions / parameters to be considered for rescheduling ",
+      "answer": null,
+      "comments": null
+    },
+    {
+      "row_number": 32,
+      "question": "What is the duration required between retests?",
+      "answer": null,
+      "comments": null
+    },
+    {
+      "row_number": 33,
+      "question": "Scheduling/No Show Follow Up:",
+      "answer": null,
+      "comments": null
+    },
+    {
+      "row_number": 34,
+      "question": "Notes / Special Accomodations",
+      "answer": null,
+      "comments": null
+    }
+  ]
+}
