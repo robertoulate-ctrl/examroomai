@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExamRoom Job Aid - How It Was Built</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0052CC 0%, #00A699 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+            margin-bottom: 10px;
+        }
+
+        .header-subtitle {
+            font-size: 0.95em;
+            opacity: 0.85;
+        }
+
+        main {
+            padding: 60px 40px;
+        }
+
+        .intro-section {
+            background: #E7F3FF;
+            border-left: 4px solid #0052CC;
+            padding: 25px;
+            border-radius: 6px;
+            margin-bottom: 40px;
+        }
+
+        .intro-section h2 {
+            color: #0052CC;
+            margin-bottom: 12px;
+            font-size: 1.3em;
+        }
+
+        .intro-section p {
+            color: #003366;
+            font-size: 1.05em;
+            line-height: 1.7;
+        }
+
+        h2 {
+            color: #0052CC;
+            font-size: 1.8em;
+            margin-top: 50px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #FFB81C;
+        }
+
+        h3 {
+            color: #00A699;
+            font-size: 1.3em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .section-content {
+            margin-bottom: 35px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 1em;
+            line-height: 1.8;
+        }
+
+        .highlight {
+            background: #FFF3CD;
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 4px solid #FFB81C;
+            margin: 20px 0;
+        }
+
+        .highlight strong {
+            color: #856404;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: #0052CC;
+            box-shadow: 0 5px 15px rgba(0, 82, 204, 0.1);
+        }
+
+        .feature-card h4 {
+            color: #0052CC;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline-item {
+            padding-left: 60px;
+            padding-bottom: 30px;
+            position: relative;
+        }
+
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: #0052CC;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #0052CC;
+        }
+
+        .timeline-item:after {
+            content: '';
+            position: absolute;
+            left: 29px;
+            top: 20px;
+            width: 2px;
+            height: 30px;
+            background: #0052CC;
+        }
+
+        .timeline-item:last-child:after {
+            display: none;
+        }
+
+        .timeline-item h4 {
+            color: #0052CC;
+            font-size: 1.1em;
+            margin-bottom: 8px;
+        }
+
+        .timeline-item p {
+            color: #666;
+            margin: 0;
+        }
+
+        .benefits-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .benefits-list li {
+            padding: 12px 0;
+            padding-left: 35px;
+            position: relative;
+            font-size: 1em;
+        }
+
+        .benefits-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #00A699;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .code-example {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            overflow-x: auto;
+            color: #333;
+        }
+
+        .faq-section {
+            background: #f9f9f9;
+            margin: 30px 0;
+        }
+
+        .faq-item {
+            margin-bottom: 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            padding: 20px;
+            background: #f0f0f0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #e8e8e8;
+        }
+
+        .faq-toggle {
+            color: #0052CC;
+            font-size: 1.2em;
+        }
+
+        .faq-answer {
+            padding: 20px;
+            background: white;
+            display: none;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        .callout {
+            margin: 25px 0;
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 4px solid #0052CC;
+        }
+
+        .callout.success {
+            background: #D4EDDA;
+            border-left-color: #00A699;
+            color: #155724;
+        }
+
+        .callout.info {
+            background: #D1ECF1;
+            border-left-color: #0052CC;
+            color: #0C5460;
+        }
+
+        .callout strong {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+
+        footer {
+            background: #f0f0f0;
+            padding: 30px 40px;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 40px;
+            justify-content: center;
+        }
+
+        .button {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1em;
+        }
+
+        .button-primary {
+            background: linear-gradient(135deg, #0052CC 0%, #00A699 100%);
+            color: white;
+        }
+
+        .button-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 82, 204, 0.3);
+        }
+
+        .button-secondary {
+            background: white;
+            color: #0052CC;
+            border: 2px solid #0052CC;
+        }
+
+        .button-secondary:hover {
+            background: #f0f5ff;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 40px 20px;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            main {
+                padding: 30px 20px;
+            }
+
+            h2 {
+                font-size: 1.4em;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .timeline-item {
+                padding-left: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 ExamRoom Job Aid Guide</h1>
+            <p>Understanding How Your Document Was Built</p>
+            <p class="header-subtitle">A Non-Technical Explanation for Everyone</p>
+        </header>
+
+        <main>
+            <section class="intro-section">
+                <h2>Welcome! 👋</h2>
+                <p>This guide explains how the <strong>ExamRoom Job Aid</strong> was created and how it works. You don't need any technical knowledge to understand this—we've made it simple and straightforward!</p>
+            </section>
+
+            <section class="section-content">
+                <h2>🎯 What Is the ExamRoom Job Aid?</h2>
+                <p>The ExamRoom Job Aid is an interactive, web-based guide designed to help <strong>recruiters and HR consultants</strong> understand and use ExamRoom.AI and Spark Hire platforms effectively.</p>
+                
+                <div class="highlight">
+                    <strong>Think of it like:</strong> An online instruction manual that you can read in your browser without needing to download or install anything. It's always available, easy to update, and works on your phone, tablet, or computer.
+                </div>
+
+                <h3>Key Features</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="icon">🧭</div>
+                        <h4>Quick Navigation</h4>
+                        <p>Click buttons to jump to any section instantly—no scrolling through long pages.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">📖</div>
+                        <h4>Multiple Sections</h4>
+                        <p>7 organized sections covering everything from basics to advanced topics.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">✏️</div>
+                        <h4>Easy Editing</h4>
+                        <p>Update content with simple forms—no coding knowledge needed!</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">📱</div>
+                        <h4>Responsive Design</h4>
+                        <p>Looks great on phones, tablets, and desktop computers.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-content">
+                <h2>🏗️ How Was It Built?</h2>
+                <p>The ExamRoom Job Aid is built using three core technologies that work together:</p>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>1. HTML (Structure)</h4>
+                        <p><strong>HTML</strong> is the skeleton or framework of the document. It defines where the title goes, where the content sits, what sections exist, etc. Think of it like the blueprint of a building.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h4>2. CSS (Styling)</h4>
+                        <p><strong>CSS</strong> is the paint and decoration. It controls colors, fonts, spacing, layouts, and how things look. It makes the page attractive and professional. Think of it like interior design.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h4>3. JavaScript (Interactivity)</h4>
+                        <p><strong>JavaScript</strong> adds interactivity and functionality. It makes buttons work, shows/hides sections, handles the editing feature, and responds to your actions. Think of it like the plumbing and electrical system.</p>
+                    </div>
+                </div>
+
+                <div class="callout info">
+                    <strong>💡 Simple Analogy:</strong> Building a website is like building a house:
+                    <ul class="benefits-list" style="margin-top: 10px;">
+                        <li><strong>HTML</strong> = The walls, foundation, and rooms (structure)</li>
+                        <li><strong>CSS</strong> = Paint, furniture, and decoration (appearance)</li>
+                        <li><strong>JavaScript</strong> = Doors that open, lights that turn on, water that runs (functionality)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section-content">
+                <h2>📦 What's Inside the Document?</h2>
+
+                <h3>The 7 Main Sections</h3>
+                <ol class="benefits-list">
+                    <li><strong>Purpose:</strong> Explains what the ExamRoom Job Aid is for</li>
+                    <li><strong>Platforms:</strong> Describes ExamRoom.AI and Spark Hire</li>
+                    <li><strong>Decision Guide:</strong> Helps you choose the right platform</li>
+                    <li><strong>Workflow:</strong> Shows the step-by-step process of using the platforms</li>
+                    <li><strong>Best Practices:</strong> Tips and recommendations for success</li>
+                    <li><strong>FAQ:</strong> Answers to common questions</li>
+                    <li><strong>Startup Questions:</strong> Guide for configuration and setup</li>
+                </ol>
+
+                <h3>Design Elements</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="icon">🎨</div>
+                        <h4>Color Scheme</h4>
+                        <p><strong>Primary:</strong> #0052CC (Blue)<br><strong>Secondary:</strong> #00A699 (Teal)<br><strong>Accent:</strong> #FFB81C (Gold)</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">✍️</div>
+                        <h4>Typography</h4>
+                        <p><strong>Font:</strong> Inter (modern, clean)<br><strong>Headings:</strong> Bold, clear hierarchy<br><strong>Body:</strong> Easy to read</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">📊</div>
+                        <h4>Components</h4>
+                        <p>Cards, tables, callouts, workflow diagrams, FAQ sections, comparison matrices</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">🖱️</div>
+                        <h4>Interactions</h4>
+                        <p>Button hovers, section switching, collapsible questions, modal dialogs</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-content">
+                <h2>✨ Special Features Explained</h2>
+
+                <h3>1. Quick Navigation Menu</h3>
+                <p>At the top of the page, you'll see 7 buttons. Click any button to instantly jump to that section. This replaces traditional scrolling and makes navigation super fast.</p>
+
+                <h3>2. Edit Content Button</h3>
+                <p>Found in the header metadata area, the <strong>"✏️ Edit Content"</strong> button opens a user-friendly editor where you can:</p>
+                <ul class="benefits-list">
+                    <li>Edit page title, subtitle, and version information</li>
+                    <li>Customize navigation button labels</li>
+                    <li>Update any section's content</li>
+                    <li>Modify footer information</li>
+                </ul>
+                <p><strong>No HTML coding required!</strong> Just fill in form fields and click save.</p>
+
+                <h3>3. Responsive Design</h3>
+                <p>The page automatically adjusts to different screen sizes:</p>
+                <ul class="benefits-list">
+                    <li>Desktop: Full width with multiple columns</li>
+                    <li>Tablet: Optimized layout with adjusted sizing</li>
+                    <li>Mobile: Single column, touch-friendly buttons</li>
+                </ul>
+
+                <h3>4. Interactive Components</h3>
+                <ul class="benefits-list">
+                    <li><strong>Collapsible Sections:</strong> Click to expand/collapse details</li>
+                    <li><strong>Hover Effects:</strong> Visual feedback when hovering over buttons</li>
+                    <li><strong>Modal Dialogs:</strong> Pop-up windows for editing content</li>
+                    <li><strong>Dynamic Updates:</strong> Changes appear instantly without refreshing</li>
+                </ul>
+            </section>
+
+            <section class="section-content">
+                <h2>🔄 How Everything Works Together</h2>
+
+                <div class="highlight">
+                    <strong>The Process:</strong>
+                    <ol class="benefits-list" style="margin-top: 10px;">
+                        <li>You open the HTML file in your browser</li>
+                        <li>The browser reads the HTML structure</li>
+                        <li>CSS styling is applied to make it look good</li>
+                        <li>JavaScript loads and waits for your interactions</li>
+                        <li>When you click a button, JavaScript responds</li>
+                        <li>Content sections show/hide based on your selection</li>
+                        <li>Editing features let you customize content</li>
+                        <li>All changes happen in your browser instantly</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section class="section-content">
+                <h2>❓ Frequently Asked Questions</h2>
+
+                <div class="faq-section">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Do I need internet to use the Job Aid?</span>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            No! Once you download the HTML file, it works completely offline. No internet connection needed. Just open the file in any web browser.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Can I share the Job Aid with others?</span>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            Absolutely! The HTML file is standalone and self-contained. You can email it, share it via cloud storage, or place it on a website. Anyone with a web browser can open and use it.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>What if I want to edit the content?</span>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            Use the "✏️ Edit Content" button in the header! It opens a user-friendly editor with tabs and form fields. No HTML knowledge needed. Make your changes and save—they'll be applied instantly.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Which browsers work with this?</span>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            Any modern web browser: Chrome, Firefox, Safari, Edge, etc. It works on computers, tablets, and smartphones. The responsive design adapts to any screen size.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>How large is the file?</span>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            The HTML file is approximately 107 KB, which is very small. It loads instantly and requires minimal storage space. You can even fit hundreds of copies on a USB drive.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Can I update the content later?</span>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            Yes! Click the "✏️ Edit Content" button anytime to update any section. The editing interface is designed to be simple and intuitive, even for non-technical users.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-content">
+                <h2>🎓 Behind the Scenes: Technical Overview</h2>
+
+                <p>Here's what makes the Job Aid work under the hood (simplified explanation):</p>
+
+                <h3>File Structure</h3>
+                <div class="code-example">
+ExamRoom_Job_Aid.html
+├── HEAD section (metadata, styles, scripts)
+├── BODY section
+│   ├── Header (title, info, edit button)
+│   ├── Navigation (7 section buttons)
+│   ├── Main Content (7 sections with various components)
+│   ├── Editor Modal (hidden until clicked)
+│   └── Footer (contact info, copyright)
+└── JavaScript (handles all interactivity)
+                </div>
+
+                <h3>CSS Approach</h3>
+                <ul class="benefits-list">
+                    <li><strong>Grid Layout:</strong> Used for flexible, responsive designs</li>
+                    <li><strong>Flexbox:</strong> Used for navigation and button layouts</li>
+                    <li><strong>CSS Variables:</strong> Consistent colors and spacing throughout</li>
+                    <li><strong>Media Queries:</strong> Automatic adjustments for different screen sizes</li>
+                    <li><strong>Transitions:</strong> Smooth animations for better user experience</li>
+                </ul>
+
+                <h3>JavaScript Functions</h3>
+                <ul class="benefits-list">
+                    <li><strong>showSection():</strong> Shows/hides content sections when buttons are clicked</li>
+                    <li><strong>toggleMatrix():</strong> Expands/collapses comparison sections</li>
+                    <li><strong>openEditor():</strong> Opens the content editing modal</li>
+                    <li><strong>saveContentChanges():</strong> Applies edited content to the page</li>
+                    <li><strong>switchTab():</strong> Switches between editor tabs</li>
+                </ul>
+            </section>
+
+            <section class="section-content">
+                <h2>🚀 Benefits of This Approach</h2>
+
+                <div class="callout success">
+                    <strong>Why This Design Works:</strong>
+                    <ul class="benefits-list" style="margin-top: 10px;">
+                        <li><strong>Single File:</strong> No complicated folder structures or multiple files to manage</li>
+                        <li><strong>No Server Needed:</strong> Works anywhere—offline, email, USB drive, cloud storage</li>
+                        <li><strong>Fast Loading:</strong> Small file size means instant opening</li>
+                        <li><strong>Universal Compatibility:</strong> Opens in any web browser on any device</li>
+                        <li><strong>Easily Updated:</strong> Simple editing interface for content changes</li>
+                        <li><strong>Professional Appearance:</strong> Modern design with IDB.org branding</li>
+                        <li><strong>Interactive:</strong> Engages users with navigation, collapsible sections, and dynamic content</li>
+                        <li><strong>Accessible:</strong> Works for non-technical users without coding knowledge</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section-content">
+                <h2>📝 How to Use the Job Aid</h2>
+
+                <h3>For Reading:</h3>
+                <ol class="benefits-list">
+                    <li>Open the ExamRoom_Job_Aid.html file in your web browser</li>
+                    <li>Click any section button in the navigation menu to jump to that topic</li>
+                    <li>Read through the content at your own pace</li>
+                    <li>Click collapsible sections to expand and see details</li>
+                </ol>
+
+                <h3>For Editing:</h3>
+                <ol class="benefits-list">
+                    <li>Click the "✏️ Edit Content" button in the header</li>
+                    <li>The editing modal opens with organized tabs</li>
+                    <li>Select the tab for what you want to edit (Header, Navigation, Content, Footer)</li>
+                    <li>Fill in the simple form fields with your changes</li>
+                    <li>Click "Save Changes" to apply updates instantly</li>
+                    <li>Close the editor to see your changes on the page</li>
+                </ol>
+            </section>
+
+            <section class="section-content">
+                <h2>🎨 Design & Branding</h2>
+
+                <p>The Job Aid uses the <strong>IDB.org Design System</strong>, a professional branding standard that includes:</p>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <strong style="color: #0052CC;">Primary Blue #0052CC</strong>
+                        <p>Used for headings, primary buttons, and important elements</p>
+                    </div>
+                    <div class="feature-card">
+                        <strong style="color: #00A699;">Secondary Teal #00A699</strong>
+                        <p>Used for highlights, secondary text, and accents</p>
+                    </div>
+                    <div class="feature-card">
+                        <strong style="color: #FFB81C;">Gold Accent #FFB81C</strong>
+                        <p>Used for attention-grabbing elements and dividers</p>
+                    </div>
+                    <div class="feature-card">
+                        <strong style="color: #666;">Neutral Gray #666</strong>
+                        <p>Used for body text and secondary information</p>
+                    </div>
+                </div>
+
+                <p style="margin-top: 25px;"><strong>Typography:</strong> The document uses the "Inter" font family, a modern, highly readable typeface designed for screens. It ensures text is clear on all devices.</p>
+            </section>
+
+            <section class="section-content">
+                <h2>💡 Future Enhancements</h2>
+
+                <p>Possible improvements for future versions:</p>
+                <ul class="benefits-list">
+                    <li>Search functionality to find topics quickly</li>
+                    <li>Print-friendly version for PDF export</li>
+                    <li>Dark mode for comfortable reading at night</li>
+                    <li>Video tutorials embedded in sections</li>
+                    <li>Multi-language support</li>
+                    <li>User feedback and ratings system</li>
+                    <li>Integration with ExamRoom.AI platform</li>
+                    <li>Mobile app version</li>
+                </ul>
+            </section>
+
+            <div class="callout info" style="margin-top: 50px;">
+                <strong>👍 Summary:</strong> The ExamRoom Job Aid is a modern, professional, and user-friendly guide built with web technologies. It's designed to be easy to use, simple to update, and accessible to everyone—regardless of their technical background. The combination of HTML structure, CSS styling, and JavaScript interactivity creates a seamless experience that works everywhere!
+            </div>
+
+            <div class="button-group">
+                <a href="ExamRoom_Job_Aid.html" class="button button-primary">Open the Job Aid ➜</a>
+                <button class="button button-secondary" onclick="printGuide()">Print This Guide 🖨️</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>📚 ExamRoom Job Aid Guide | Created: March 23, 2026 | Version 1.0</p>
+            <p>This guide explains how the ExamRoom.AI Job Aid was built for non-technical users</p>
+            <p style="margin-top: 15px; opacity: 0.7;">Questions? Refer to the FAQ section above or contact your HR Operations team.</p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const toggle = element.querySelector('.faq-toggle');
+            
+            // Close all other FAQs
+            document.querySelectorAll('.faq-answer').forEach(ans => {
+                if (ans !== answer) {
+                    ans.classList.remove('active');
+                    ans.previousElementSibling.querySelector('.faq-toggle').textContent = '+';
+                }
+            });
+            
+            // Toggle current FAQ
+            answer.classList.toggle('active');
+            toggle.textContent = answer.classList.contains('active') ? '−' : '+';
+        }
+
+        function printGuide() {
+            window.print();
+        }
+
+        // Smooth scrolling for any links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
