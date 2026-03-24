@@ -566,10 +566,9 @@
                 <button class="nav-btn" onclick="showSection('workflow')">Workflow</button>
                 <button class="nav-btn" onclick="showSection('best-practices')">Best Practices</button>
                 <button class="nav-btn" onclick="showSection('faq')">FAQ</button>
-            </div>
-        </nav>
-
-        <!-- SECTIONS -->
+                <button class="nav-btn" onclick="showSection('startup-questions')">Startup Questions</button>
+                                                                                           </div>
+        </nav>        <!-- SECTIONS -->
         <div class="sections-container">
             <!-- PURPOSE SECTION -->
             <section id="purpose" class="active">
@@ -1143,6 +1142,602 @@
                 </div>
             </section>
         </div>
+
+            <!-- STARTUP QUESTIONS SECTION -->
+            <section id="startup-questions">
+                <h2>Startup Questions Configuration Guide</h2>
+                <p class="section-subtitle">Quick reference for filling the ExamRoom.AI startup configuration Excel file</p>
+                
+                <div class="callout info">
+                    <strong>📋 Overview</strong>
+                    This section provides guidance on completing the Startup Questions Excel file and understanding the JSON configuration structure.
+                </div>
+
+                <h3>What Are Startup Questions?</h3>
+                <div class="cards-grid">
+                    <div class="card">
+                        <h3>📝 Purpose</h3>
+                        <p>Startup Questions are essential configuration parameters that define how your organization will use ExamRoom.AI, including platform settings, proctoring rules, and exam administration procedures.</p>
+                    </div>
+                    <div class="card">
+                        <h3>⚙️ Scope</h3>
+                        <p>Covers 56+ key questions organized into 6 categories, plus 31 additional exam-specific configurations.</p>
+                    </div>
+                    <div class="card">
+                        <h3>🔄 Process</h3>
+                        <p>Complete the Excel file, convert to JSON, validate, and upload to ExamRoom.AI for immediate implementation.</p>
+                    </div>
+                </div>
+
+                <h3>Configuration Categories</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Items</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Organization Info</strong></td>
+                            <td>3</td>
+                            <td>Organization name, payment model, candidate ID creation preferences</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Contact Info</strong></td>
+                            <td>2</td>
+                            <td>Support contacts and incident response procedures</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Platform Config</strong></td>
+                            <td>3</td>
+                            <td>Assessment platform type, console URLs, exam URLs</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Exam Settings</strong></td>
+                            <td>2</td>
+                            <td>Timer behavior and answer persistence on disconnection</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Proctoring Config</strong></td>
+                            <td>2</td>
+                            <td>Access credentials and technical support procedures</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Other Settings</strong></td>
+                            <td>44</td>
+                            <td>Eligibility, check-in, identification, registration, technology requirements</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Step-by-Step Completion Guide</h3>
+                
+                <div class="workflow-container">
+                    <div class="workflow-phase">
+                        <div class="phase-title">📋 Step 1: Gather Information</div>
+                        <div class="steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Collect Organizational Details</h4>
+                                    <p>Gather company name, branding preferences, and decision-maker contact information for ExamRoom support.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Document Platform Details</h4>
+                                    <p>Note your current assessment platform type, console URL, and any existing exam URLs or system integrations.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Define Testing Rules</h4>
+                                    <p>Determine your organization's testing policies: timer behavior, answer saving, reconnection rules, and eligibility requirements.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workflow-phase">
+                        <div class="phase-title">✍️ Step 2: Complete the Excel File</div>
+                        <div class="steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Open Startup Questions.xlsx</h4>
+                                    <p>Open the Excel file in your spreadsheet application. Review the "EX.AI Startup Questions" sheet.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Fill in Answers</h4>
+                                    <p>For each question in column A, provide your organization's answer in column C. Add any relevant comments in column D.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Complete Additional Information</h4>
+                                    <p>Review the "Additional Exams Info" sheet and complete any exam-specific configurations relevant to your use case.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Review for Completeness</h4>
+                                    <p>Verify all required questions are answered. Consult with stakeholders on critical decisions (payment model, proctoring requirements, etc).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workflow-phase">
+                        <div class="phase-title">🔄 Step 3: Convert to JSON</div>
+                        <div class="steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Run Conversion Script</h4>
+                                    <p>Execute: <code>python3 scripts/excel_to_json_converter.py</code></p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Verify Output</h4>
+                                    <p>Check that <code>startup_questions_config.json</code> is created with all your answers organized by category.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Review JSON Structure</h4>
+                                    <p>Open the JSON file in your editor to verify all data is correctly captured and structured.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workflow-phase">
+                        <div class="phase-title">✅ Step 4: Validate & Deploy</div>
+                        <div class="steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Internal Review</h4>
+                                    <p>Have your HR/Recruiting team review the configuration for accuracy and completeness.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Stakeholder Approval</h4>
+                                    <p>Get sign-off from key stakeholders on critical configurations (proctoring, eligibility, etc).</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Upload to ExamRoom.AI</h4>
+                                    <p>Submit the JSON file to ExamRoom.AI through their API or admin dashboard for implementation.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Monitor & Adjust</h4>
+                                    <p>After implementation, monitor for any issues and adjust configurations as needed.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Key Questions by Category</h3>
+
+                <div class="decision-matrix">
+                    <div class="matrix-row">
+                        <div class="matrix-header" onclick="toggleMatrix(this)">🏢 Organization Info - Key Questions</div>
+                        <div class="matrix-content">
+                            <p><strong>1. Organization Name:</strong> How should your company appear on ExamRoom.AI?</p>
+                            <p><strong>2. Payment Model:</strong> Do candidates or your organization pay for proctoring?</p>
+                            <p><strong>3. Candidate ID:</strong> Will ExamRoom create IDs or does your organization prefer to provide them?</p>
+                        </div>
+                    </div>
+
+                    <div class="matrix-row">
+                        <div class="matrix-header" onclick="toggleMatrix(this)">📱 Platform Config - Key Questions</div>
+                        <div class="matrix-content">
+                            <p><strong>1. Assessment Platform:</strong> What is your current test platform?</p>
+                            <p><strong>2. Console URL:</strong> What is your test console URL?</p>
+                            <p><strong>3. Exam URLs:</strong> What are the URLs for your exams?</p>
+                        </div>
+                    </div>
+
+                    <div class="matrix-row">
+                        <div class="matrix-header" onclick="toggleMatrix(this)">⚙️ Exam Settings - Key Questions</div>
+                        <div class="matrix-content">
+                            <p><strong>1. Timer Behavior:</strong> Should the timer stop if a candidate disconnects?</p>
+                            <p><strong>2. Answer Persistence:</strong> Should answers be saved if the candidate disconnects?</p>
+                        </div>
+                    </div>
+
+                    <div class="matrix-row">
+                        <div class="matrix-header" onclick="toggleMatrix(this)">👮 Proctoring Config - Key Questions</div>
+                        <div class="matrix-content">
+                            <p><strong>1. Access Credentials:</strong> Will proctors need credentials to provide test access?</p>
+                            <p><strong>2. Support Procedures:</strong> How should proctors respond to technical issues?</p>
+                        </div>
+                    </div>
+
+                    <div class="matrix-row">
+                        <div class="matrix-header" onclick="toggleMatrix(this)">📋 Other Settings - Key Questions</div>
+                        <div class="matrix-content">
+                            <p><strong>Eligibility:</strong> Is eligibility required before scheduling? Will it come from a database or LMS?</p>
+                            <p><strong>Check-in:</strong> What identification methods will you use? (Government ID, badges, etc.)</p>
+                            <p><strong>Technology:</strong> Do candidates need the ExamRoom 360 app? Browser extension?</p>
+                            <p><strong>Registration:</strong> Will candidates create accounts or will you provide information?</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Best Practices for Startup Configuration</h3>
+                <div class="practice-card">
+                    <h4>✅ Involve Stakeholders</h4>
+                    <p>Include HR, Recruiting, IT, Compliance, and Finance in configuration decisions. This ensures all organizational needs are addressed.</p>
+                </div>
+                <div class="practice-card">
+                    <h4>✅ Start Simple</h4>
+                    <p>Begin with core configurations (organization info, basic exam settings). You can add complexity later as you become familiar with ExamRoom.</p>
+                </div>
+                <div class="practice-card">
+                    <h4>✅ Document Decisions</h4>
+                    <p>Record why you made each choice in the Comments column. This helps during audits and when onboarding new team members.</p>
+                </div>
+                <div class="practice-card">
+                    <h4>✅ Test Before Full Rollout</h4>
+                    <p>Run a pilot test with small candidate group using your configuration. Gather feedback and adjust before full implementation.</p>
+                </div>
+                <div class="practice-card">
+                    <h4>✅ Version Control</h4>
+                    <p>Keep versions of your Excel and JSON files. This allows you to track changes and rollback if needed.</p>
+                </div>
+
+                <h3>Common Configuration Scenarios</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Scenario</th>
+                            <th>Key Configurations</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Academic Institution</strong></td>
+                            <td>Eligibility from student database, room scan required, proctored remote exams, government ID verification</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Corporate Hiring</strong></td>
+                            <td>Candidate-created accounts, remote proctoring optional, quick check-in process, timer continues on disconnect</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Certification Program</strong></td>
+                            <td>Pre-registration required, photo ID verification, proctored exams, answers saved on disconnect, database eligibility</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Unproctored Assessments</strong></td>
+                            <td>Minimal check-in, no proctoring required, no ID verification, self-paced, answers auto-saved</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="callout success">
+                    <strong>✅ Pro Tip:</strong> After your initial configuration is live, set a 30-day check-in to review how the settings are working. Gather feedback from proctors, candidates, and administrators to identify any needed adjustments.
+                </div>
+            </section>
+
+            <!-- STARTUP QUESTIONS SECTION -->
+            <section id="startup-questions">
+                <h2>Startup Questions Configuration Guide</h2>
+                <p class="section-subtitle">Quick reference for filling the ExamRoom.AI startup configuration Excel file</p>
+                
+                <div class="callout info">
+                    <strong>📋 Overview</strong>
+                    This section provides guidance on completing the Startup Questions Excel file and understanding the JSON configuration structure.
+                </div>
+
+                <h3>What Are Startup Questions?</h3>
+                <div class="cards-grid">
+                    <div class="card">
+                        <h3>📝 Purpose</h3>
+                        <p>Startup Questions are essential configuration parameters that define how your organization will use ExamRoom.AI, including platform settings, proctoring rules, and exam administration procedures.</p>
+                    </div>
+                    <div class="card">
+                        <h3>⚙️ Scope</h3>
+                        <p>Covers 56+ key questions organized into 6 categories, plus 31 additional exam-specific configurations.</p>
+                    </div>
+                    <div class="card">
+                        <h3>🔄 Process</h3>
+                        <p>Complete the Excel file, convert to JSON, validate, and upload to ExamRoom.AI for immediate implementation.</p>
+                    </div>
+                </div>
+
+                <h3>Configuration Categories</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Items</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Organization Info</strong></td>
+                            <td>3</td>
+                            <td>Organization name, payment model, candidate ID creation preferences</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Contact Info</strong></td>
+                            <td>2</td>
+                            <td>Support contacts and incident response procedures</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Platform Config</strong></td>
+                            <td>3</td>
+                            <td>Assessment platform type, console URLs, exam URLs</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Exam Settings</strong></td>
+                            <td>2</td>
+                            <td>Timer behavior and answer persistence on disconnection</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Proctoring Config</strong></td>
+                            <td>2</td>
+                            <td>Access credentials and technical support procedures</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Other Settings</strong></td>
+                            <td>44</td>
+                            <td>Eligibility, check-in, identification, registration, technology requirements</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Step-by-Step Completion Guide</h3>
+                
+                <div class="workflow-container">
+                    <div class="workflow-phase">
+                        <div class="phase-title">📋 Step 1: Gather Information</div>
+                        <div class="steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Collect Organizational Details</h4>
+                                    <p>Gather company name, branding preferences, and decision-maker contact information for ExamRoom support.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Document Platform Details</h4>
+                                    <p>Note your current assessment platform type, console URL, and any existing exam URLs or system integrations.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Define Testing Rules</h4>
+                                    <p>Determine your organization's testing policies: timer behavior, answer saving, reconnection rules, and eligibility requirements.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workflow-phase">
+                        <div class="phase-title">✍️ Step 2: Complete the Excel File</div>
+                        <div class="steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Open Startup Questions.xlsx</h4>
+                                    <p>Open the Excel file in your spreadsheet application. Review the "EX.AI Startup Questions" sheet.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Fill in Answers</h4>
+                                    <p>For each question in column A, provide your organization's answer in column C. Add any relevant comments in column D.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Complete Additional Information</h4>
+                                    <p>Review the "Additional Exams Info" sheet and complete any exam-specific configurations relevant to your use case.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Review for Completeness</h4>
+                                    <p>Verify all required questions are answered. Consult with stakeholders on critical decisions (payment model, proctoring requirements, etc).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workflow-phase">
+                        <div class="phase-title">🔄 Step 3: Convert to JSON</div>
+                        <div class="steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Run Conversion Script</h4>
+                                    <p>Execute: <code>python3 scripts/excel_to_json_converter.py</code></p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Verify Output</h4>
+                                    <p>Check that <code>startup_questions_config.json</code> is created with all your answers organized by category.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Review JSON Structure</h4>
+                                    <p>Open the JSON file in your editor to verify all data is correctly captured and structured.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workflow-phase">
+                        <div class="phase-title">✅ Step 4: Validate & Deploy</div>
+                        <div class="steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Internal Review</h4>
+                                    <p>Have your HR/Recruiting team review the configuration for accuracy and completeness.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Stakeholder Approval</h4>
+                                    <p>Get sign-off from key stakeholders on critical configurations (proctoring, eligibility, etc).</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Upload to ExamRoom.AI</h4>
+                                    <p>Submit the JSON file to ExamRoom.AI through their API or admin dashboard for implementation.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Monitor & Adjust</h4>
+                                    <p>After implementation, monitor for any issues and adjust configurations as needed.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Key Questions by Category</h3>
+
+                <div class="decision-matrix">
+                    <div class="matrix-row">
+                        <div class="matrix-header" onclick="toggleMatrix(this)">🏢 Organization Info - Key Questions</div>
+                        <div class="matrix-content">
+                            <p><strong>1. Organization Name:</strong> How should your company appear on ExamRoom.AI?</p>
+                            <p><strong>2. Payment Model:</strong> Do candidates or your organization pay for proctoring?</p>
+                            <p><strong>3. Candidate ID:</strong> Will ExamRoom create IDs or does your organization prefer to provide them?</p>
+                        </div>
+                    </div>
+
+                    <div class="matrix-row">
+                        <div class="matrix-header" onclick="toggleMatrix(this)">📱 Platform Config - Key Questions</div>
+                        <div class="matrix-content">
+                            <p><strong>1. Assessment Platform:</strong> What is your current test platform?</p>
+                            <p><strong>2. Console URL:</strong> What is your test console URL?</p>
+                            <p><strong>3. Exam URLs:</strong> What are the URLs for your exams?</p>
+                        </div>
+                    </div>
+
+                    <div class="matrix-row">
+                        <div class="matrix-header" onclick="toggleMatrix(this)">⚙️ Exam Settings - Key Questions</div>
+                        <div class="matrix-content">
+                            <p><strong>1. Timer Behavior:</strong> Should the timer stop if a candidate disconnects?</p>
+                            <p><strong>2. Answer Persistence:</strong> Should answers be saved if the candidate disconnects?</p>
+                        </div>
+                    </div>
+
+                    <div class="matrix-row">
+                        <div class="matrix-header" onclick="toggleMatrix(this)">👮 Proctoring Config - Key Questions</div>
+                        <div class="matrix-content">
+                            <p><strong>1. Access Credentials:</strong> Will proctors need credentials to provide test access?</p>
+                            <p><strong>2. Support Procedures:</strong> How should proctors respond to technical issues?</p>
+                        </div>
+                    </div>
+
+                    <div class="matrix-row">
+                        <div class="matrix-header" onclick="toggleMatrix(this)">📋 Other Settings - Key Questions</div>
+                        <div class="matrix-content">
+                            <p><strong>Eligibility:</strong> Is eligibility required before scheduling? Will it come from a database or LMS?</p>
+                            <p><strong>Check-in:</strong> What identification methods will you use? (Government ID, badges, etc.)</p>
+                            <p><strong>Technology:</strong> Do candidates need the ExamRoom 360 app? Browser extension?</p>
+                            <p><strong>Registration:</strong> Will candidates create accounts or will you provide information?</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Best Practices for Startup Configuration</h3>
+                <div class="practice-card">
+                    <h4>✅ Involve Stakeholders</h4>
+                    <p>Include HR, Recruiting, IT, Compliance, and Finance in configuration decisions. This ensures all organizational needs are addressed.</p>
+                </div>
+                <div class="practice-card">
+                    <h4>✅ Start Simple</h4>
+                    <p>Begin with core configurations (organization info, basic exam settings). You can add complexity later as you become familiar with ExamRoom.</p>
+                </div>
+                <div class="practice-card">
+                    <h4>✅ Document Decisions</h4>
+                    <p>Record why you made each choice in the Comments column. This helps during audits and when onboarding new team members.</p>
+                </div>
+                <div class="practice-card">
+                    <h4>✅ Test Before Full Rollout</h4>
+                    <p>Run a pilot test with small candidate group using your configuration. Gather feedback and adjust before full implementation.</p>
+                </div>
+                <div class="practice-card">
+                    <h4>✅ Version Control</h4>
+                    <p>Keep versions of your Excel and JSON files. This allows you to track changes and rollback if needed.</p>
+                </div>
+
+                <h3>Common Configuration Scenarios</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Scenario</th>
+                            <th>Key Configurations</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Academic Institution</strong></td>
+                            <td>Eligibility from student database, room scan required, proctored remote exams, government ID verification</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Corporate Hiring</strong></td>
+                            <td>Candidate-created accounts, remote proctoring optional, quick check-in process, timer continues on disconnect</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Certification Program</strong></td>
+                            <td>Pre-registration required, photo ID verification, proctored exams, answers saved on disconnect, database eligibility</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Unproctored Assessments</strong></td>
+                            <td>Minimal check-in, no proctoring required, no ID verification, self-paced, answers auto-saved</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="callout success">
+                    <strong>✅ Pro Tip:</strong> After your initial configuration is live, set a 30-day check-in to review how the settings are working. Gather feedback from proctors, candidates, and administrators to identify any needed adjustments.
+                </div>
+            </section>
 
         <!-- FOOTER -->
         <footer>
