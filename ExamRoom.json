@@ -1,0 +1,101 @@
+{
+  "document": {
+    "metadata": {
+      "source_file": "ExamRoom.html",
+      "source_type": "Microsoft Word HTML Export",
+      "conversion_method": "HTML to JSON",
+      "conversion_date": "2026-03-23T20:15:10.575728",
+      "title": "Inbox - MORERA SEGURA , JENNIFER - Outlook",
+      "original_author": "jennifer morera segura",
+      "last_editor": "Roberto Ulate Rivera",
+      "created_date": "2026-03-24T02:13:00Z",
+      "document_statistics": {
+        "word_count": 635,
+        "character_count": 3405,
+        "paragraph_count": 74,
+        "extracted_sentences": 38
+      }
+    }
+  },
+  "content": {
+    "sections": [
+      {
+        "title": "ExamRoom.AI",
+        "topics": [
+          "AI Proctoring: Uses webcam and microphone to monitor candidates during exams",
+          "Security: Detects prohibited items, tracks eye movement and body language",
+          "Setup Time: Requires exams to be loaded immediately after requisition approval; setup and testing can take several weeks",
+          "Cost: Around $40 per exam, currently covered by HRD but may shift to chargeback"
+        ],
+        "use_case": "Often used for technical roles where exam integrity is critical. Requires early coordination with clients and clear test descriptions",
+        "when_to_use": [
+          "You need secure, monitored technical testing",
+          "The role requires objective skill validation under exam conditions",
+          "You have time to plan ahead (exam setup takes weeks)",
+          "The client requests proctored assessments"
+        ]
+      },
+      {
+        "title": "Spark Hire",
+        "topics": [
+          "Video Interviews: Candidates record responses to preset questions",
+          "Assessment Viewer: Combines interview videos, evaluations, and candidate data in one page",
+          "Behavioral Assessments: Includes predictive behavioral tools and custom scorecards",
+          "Flexibility: Easier to deploy quickly; used for HR assessments and soft skill evaluations"
+        ],
+        "use_case": "Frequently used for consultant modality roles and general screening. Recruiters can customize questions and review asynchronously",
+        "when_to_use": [
+          "You need to screen for communication, motivation, or fit",
+          "You want to review interviews asynchronously",
+          "You're working with tight timelines or high applicant volume",
+          "The role is consultant modality, or doesn't require technical exams"
+        ]
+      }
+    ],
+    "decision_framework": {
+      "comparison_criteria": [
+        {
+          "criteria": "Role requires technical testing",
+          "examroom_ai": "Yes - Recommended",
+          "spark_hire": "No - Not suitable"
+        },
+        {
+          "criteria": "Secure, proctored environment needed",
+          "examroom_ai": "Yes - Primary feature",
+          "spark_hire": "No - Video only"
+        },
+        {
+          "criteria": "Soft skills or behavioral screening",
+          "examroom_ai": "No",
+          "spark_hire": "Yes - Recommended"
+        },
+        {
+          "criteria": "Quick deployment needed",
+          "examroom_ai": "No - Weeks to setup",
+          "spark_hire": "Yes - Quick deployment"
+        },
+        {
+          "criteria": "Client requests exam integrity",
+          "examroom_ai": "Yes - Primary use",
+          "spark_hire": "No"
+        },
+        {
+          "criteria": "High volume of candidates",
+          "examroom_ai": "Possible but slower",
+          "spark_hire": "Yes - Better for volume"
+        },
+        {
+          "criteria": "Consultant modality or HR roles",
+          "examroom_ai": "No",
+          "spark_hire": "Yes - Recommended"
+        },
+        {
+          "criteria": "Budget flexibility",
+          "examroom_ai": "$40 per exam",
+          "spark_hire": "Variable pricing"
+        }
+      ]
+    },
+    "raw_text": "The below solution was used for the translation exams : •&nbsp; Fully Live Proctoring: $14.00 per exam, per candidate for the first hour; $4.00 per exam, per candidate for each additional hour after the first hour. •&nbsp; Customized Test Delivery Platform: $30 per exam, per candidate. •&nbsp; Fully Automated: $10 per exam per candidate for the first hour, $4.00 per exam, per candidate for each additional hour after the first Full Live Proctoring Two separate humans involved in the entire process, first human would act as the Onboarding Agent (OBA) and the second human would act as the Proctor. 0 Role of Onboarding Agent •&nbsp; Identity verification- photo id, face scan, room scan and additional verification features such as knuckle scan, Typing DNA, Fingerprint, Voice Recognition. Live Proctorin g •&nbsp; It involves live proctoring with Al Assistance •&nbsp; Proctor will watch the entire session and provide and assistance or password if needed, proctor also flags the instances while Al is also capturing cheating instances. •&nbsp; Our system notifies the proctor if candidate switch to another tab and if the candidate tries to use any restricted keys. •&nbsp; Proctor can verbally speak to the candidate and chat with the candidate if needed and can stop the test immediately for abhorrent behaviour. We provide an option for the client/administrator to live barge the test sessions and to monitor exam in real time •&nbsp; The video recordings of the exam session will be available in the client dashboard within less than 5 min, the video recordings will be available for 7 days in their system for download and after 7 days we archive it for 6 months. In file formate ExamRoom vs SparkHire.docx Here is a comparison and guide for when to use ExamRoom.Al VS Spark Hire: Purpose &amp; Use Case Tool Primary Use Best For ExamRoom.AI Al-proctored technical assessments Roles requiring secure, monitored testing environments Spark Hire One-way video interviews &amp; behavioral asse..."
+  }
+}

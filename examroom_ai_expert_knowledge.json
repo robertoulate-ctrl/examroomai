@@ -1,0 +1,787 @@
+{
+  "metadata": {
+    "document_type": "ExamRoom.AI Expert Knowledge Base",
+    "version": "1.0",
+    "created_date": "2026-03-23",
+    "last_updated": "2026-03-23",
+    "target_audience": ["Recruiters", "HR Consultants", "Talent Acquisition Professionals"],
+    "purpose": "Comprehensive guide to ExamRoom.AI for recruitment and HR assessment workflows",
+    "sme_focus": "Assessment platform for candidate evaluation, test administration, and talent management"
+  },
+
+  "platform_overview": {
+    "name": "ExamRoom.AI",
+    "description": "Advanced assessment platform designed to systematically develop, assess, and manage large pools of test questions and candidate evaluations",
+    "core_modules": {
+      "skrive_console": {
+        "name": "Skrive Console",
+        "description": "Centralized application for managing and organizing test question collections (Item Bank)",
+        "purpose": "Streamline assessment development and delivery process",
+        "key_benefits": [
+          "Centralized repository for validated assessment items",
+          "Organized test question management",
+          "Assessment design and administration",
+          "Diverse validated item pool aligned with learning objectives",
+          "Ensures validity, reliability, and fairness of assessments"
+        ]
+      },
+      "edison_assessments": {
+        "name": "Edison Assessments",
+        "description": "Comprehensive test administration module for managing examination lifecycle",
+        "purpose": "Optimize assessment process from planning to post-exam reporting",
+        "key_components": [
+          "Scheduling and candidate management",
+          "Check-in management",
+          "Live and automated proctoring",
+          "Post-exam reporting and analytics",
+          "Security and integrity controls"
+        ]
+      }
+    },
+    "use_cases": [
+      "Professional certification",
+      "Corporate training",
+      "Talent acquisition and recruitment",
+      "Skills assessment",
+      "Compliance evaluation",
+      "Standardized testing",
+      "Adaptive testing",
+      "Research and psychometrics"
+    ]
+  },
+
+  "recruiter_hr_consultant_perspective": {
+    "role_overview": {
+      "primary_responsibilities": [
+        "Identify and screen candidates using standardized assessments",
+        "Design role-specific evaluation criteria",
+        "Administer tests to candidate pools",
+        "Interpret assessment results for hiring decisions",
+        "Ensure fair and unbiased evaluation process",
+        "Track candidate progress through assessment pipeline",
+        "Maintain assessment integrity and compliance"
+      ],
+      "key_challenges": [
+        "Evaluating large candidate pools efficiently",
+        "Ensuring assessment fairness and lack of bias",
+        "Maintaining test security during administration",
+        "Verifying candidate identities reliably",
+        "Accessing comprehensive post-exam reporting",
+        "Meeting compliance and regulatory requirements",
+        "Reducing time-to-hire with efficient screening"
+      ],
+      "business_outcomes": [
+        "Faster hiring cycles",
+        "Better candidate-role fit",
+        "Reduced hiring mistakes",
+        "Objective talent evaluation",
+        "Compliant hiring practices",
+        "Improved assessment credibility"
+      ]
+    },
+
+    "assessment_framework": {
+      "assessment_types": {
+        "multiple_choice": {
+          "description": "Single or multiple correct answers for objective evaluation",
+          "recruiter_use": "Technical skills, knowledge verification, compliance testing",
+          "advantages": [
+            "Objective scoring",
+            "Quick evaluation",
+            "Scalable to large candidate pools",
+            "Easy comparison across candidates"
+          ]
+        },
+        "true_false": {
+          "description": "Binary response questions for fundamental knowledge",
+          "recruiter_use": "Baseline competency checks, regulatory knowledge verification",
+          "advantages": [
+            "Simple and clear",
+            "Fast assessment",
+            "Reduces assessment anxiety"
+          ]
+        },
+        "short_answer": {
+          "description": "Open-ended responses for complex competency evaluation",
+          "recruiter_use": "Critical thinking, problem-solving, communication assessment",
+          "advantages": [
+            "Evaluates reasoning",
+            "Assesses writing ability",
+            "Reveals candidate thought process"
+          ]
+        },
+        "performance_based": {
+          "description": "Practical task-based assessment simulating job scenarios",
+          "recruiter_use": "Real-world job simulation, skill validation, practical competency",
+          "advantages": [
+            "Predicts on-the-job performance",
+            "Authentic evaluation",
+            "Demonstrates applied skills"
+          ]
+        }
+      },
+
+      "item_bank_management": {
+        "definition": "Centralized repository of validated assessment questions and tasks",
+        "recruiter_value": "Enables consistent, fair evaluation across all candidates and time periods",
+        "key_attributes": [
+          "Subject area classification",
+          "Difficulty level calibration",
+          "Cognitive domain mapping (recall, analysis, critical thinking)",
+          "Standards and learning objectives alignment",
+          "Bias review and fairness validation",
+          "Language clarity verification",
+          "Appropriateness for target audience"
+        ],
+        "management_capabilities": [
+          "Search and retrieve items efficiently",
+          "Modify and update assessment content",
+          "Reuse validated items across multiple assessments",
+          "Version control and audit trail",
+          "Randomization for test security",
+          "Adaptive testing support"
+        ],
+        "recruiter_workflow": {
+          "step_1": "Define role requirements and competencies",
+          "step_2": "Search Item Bank for relevant assessment items",
+          "step_3": "Select items matching difficulty and cognitive levels",
+          "step_4": "Customize assessment for specific role or position",
+          "step_5": "Set difficulty distribution and weighting",
+          "step_6": "Configure for randomization and adaptive logic",
+          "step_7": "Validate assessment fairness and bias",
+          "step_8": "Deploy to candidate pool"
+        }
+      }
+    },
+
+    "test_administration_workflow": {
+      "definition": "Structured process of planning, conducting, and concluding examinations to ensure fairness, security, and efficiency",
+      
+      "core_principles": [
+        "Ensure integrity and fairness of assessment",
+        "Maintain standardized procedures",
+        "Provide equal opportunity for all candidates",
+        "Enforce security and prevent malpractice",
+        "Verify candidate identity reliably",
+        "Compile comprehensive results and reporting",
+        "Address disputes and appeals professionally"
+      ],
+
+      "phases": {
+        "planning_phase": {
+          "title": "Planning & Preparation",
+          "recruiter_activities": [
+            "Define assessment objectives and competencies",
+            "Determine candidate pool and target roles",
+            "Set assessment timeline and scheduling windows",
+            "Select appropriate test format and items",
+            "Establish passing scores and evaluation criteria",
+            "Configure proctoring requirements (live or automated)",
+            "Plan for accessibility and accommodations",
+            "Communicate assessment details to candidates"
+          ],
+          "key_decisions": [
+            "Assessment scope and coverage",
+            "Difficulty level and item selection",
+            "Time limits and question sequencing",
+            "Passing score thresholds",
+            "Proctoring method (live or automated)",
+            "Accommodation policies"
+          ]
+        },
+
+        "scheduling_phase": {
+          "title": "Scheduling & Candidate Management",
+          "recruiter_activities": [
+            "Create assessment windows and time slots",
+            "Send invitations to candidate pool",
+            "Manage candidate confirmations",
+            "Track registration and enrollment",
+            "Handle rescheduling requests",
+            "Send reminders to candidates",
+            "Monitor no-show rates",
+            "Prepare backup schedules if needed"
+          ],
+          "system_capabilities": [
+            "Automated scheduling interface",
+            "Calendar integration",
+            "Reminder notifications",
+            "Registration tracking",
+            "Waitlist management"
+          ]
+        },
+
+        "check_in_management": {
+          "title": "Check-In & Verification",
+          "recruiter_responsibilities": [
+            "Verify candidate identity before assessment",
+            "Confirm candidate information accuracy",
+            "Explain assessment instructions",
+            "Address last-minute questions",
+            "Record check-in time",
+            "Ensure all materials are ready",
+            "Verify technical connectivity"
+          ],
+          "security_protocols": [
+            "ID verification (government-issued ID)",
+            "Biometric verification (when applicable)",
+            "FIDO (Fast Identity Online) authentication",
+            "Environment verification for remote assessments",
+            "Equipment and technical readiness checks"
+          ]
+        },
+
+        "test_execution_phase": {
+          "title": "Test Administration & Proctoring",
+          "proctoring_options": {
+            "live_proctoring": {
+              "description": "Real-time human proctor monitoring assessment",
+              "recruiter_use": "High-stakes assessments, compliance testing, sensitive roles",
+              "benefits": [
+                "Real-time intervention capabilities",
+                "Human judgment on ambiguities",
+                "Enhanced security and integrity",
+                "Immediate technical support",
+                "Better for complex performance tasks"
+              ],
+              "considerations": [
+                "Higher cost per assessment",
+                "Scheduling complexity",
+                "Proctor training requirements"
+              ]
+            },
+            "automated_proctoring": {
+              "description": "Technology-based monitoring using AI and computer vision",
+              "recruiter_use": "Volume assessments, initial screening, remote candidates",
+              "benefits": [
+                "24/7 availability",
+                "Scalable for large candidate pools",
+                "Lower cost per assessment",
+                "Consistent evaluation",
+                "Reduced scheduling constraints"
+              ],
+              "considerations": [
+                "Candidate comfort level",
+                "Privacy considerations",
+                "Technical requirements",
+                "Flagged behavior review"
+              ]
+            }
+          },
+          "recruiter_monitoring": [
+            "Real-time candidate progress tracking",
+            "Technical issue identification and resolution",
+            "Suspicious activity flagging",
+            "Assessment completion status",
+            "Time-on-task monitoring"
+          ]
+        },
+
+        "post_exam_phase": {
+          "title": "Scoring & Result Compilation",
+          "processes": [
+            "Automatic scoring of objective items (multiple choice, true/false)",
+            "Manual review of subjective responses (short answer, performance tasks)",
+            "Score calibration and normalization",
+            "Result compilation and aggregation",
+            "Performance analytics generation",
+            "Feedback report creation",
+            "Score validation and quality checks"
+          ],
+          "recruiter_outputs": [
+            "Individual candidate score reports",
+            "Comparative candidate rankings",
+            "Competency-level breakdown",
+            "Time-on-task analysis",
+            "Item-level performance review",
+            "Automated recommendations"
+          ]
+        },
+
+        "reporting_phase": {
+          "title": "Reporting & Decision-Making",
+          "report_types": {
+            "candidate_score_report": {
+              "contents": [
+                "Total score and percentile",
+                "Competency-level performance",
+                "Section-by-section breakdown",
+                "Time-on-task metrics",
+                "Comparative rankings"
+              ],
+              "recruiter_use": "Individual candidate evaluation and comparison"
+            },
+            "group_analytics": {
+              "contents": [
+                "Cohort performance statistics",
+                "Difficulty analysis",
+                "Pass/fail distribution",
+                "Item effectiveness review",
+                "Bias detection and fairness metrics"
+              ],
+              "recruiter_use": "Assessment effectiveness and candidate pool analysis"
+            },
+            "compliance_report": {
+              "contents": [
+                "Assessment administration documentation",
+                "Accommodations provided",
+                "Incident reports",
+                "Proctoring verification",
+                "Audit trail"
+              ],
+              "recruiter_use": "Regulatory compliance and legal documentation"
+            }
+          },
+          "decision_support": [
+            "Automated pass/fail recommendations",
+            "Benchmark comparisons",
+            "Percentile rankings",
+            "Competency mastery indicators",
+            "Risk flags for further review"
+          ]
+        }
+      }
+    },
+
+    "critical_assessment_principles": {
+      "validity": {
+        "definition": "Assessment measures what it claims to measure (job-related competencies)",
+        "recruiter_action": "Select items from Item Bank validated for target role and competencies",
+        "best_practices": [
+          "Align items with job requirements",
+          "Use items validated for your candidate population",
+          "Verify cognitive domain match",
+          "Review item statistics and performance data"
+        ]
+      },
+      "reliability": {
+        "definition": "Assessment results are consistent and reproducible",
+        "recruiter_action": "Use standardized procedures and validated item pool",
+        "best_practices": [
+          "Use standardized assessment administration",
+          "Employ consistent scoring criteria",
+          "Minimize environmental variables",
+          "Use multiple items per competency"
+        ]
+      },
+      "fairness": {
+        "definition": "Assessment doesn't disadvantage candidates based on protected characteristics",
+        "recruiter_action": "Review items for bias, provide accommodations, analyze outcomes",
+        "best_practices": [
+          "Conduct item bias review",
+          "Provide reasonable accommodations",
+          "Analyze results by demographic groups",
+          "Remove or modify biased items",
+          "Use objective scoring methods"
+        ]
+      },
+      "security": {
+        "definition": "Assessment integrity is protected from cheating and malpractice",
+        "recruiter_action": "Implement proctoring, verify identities, prevent item exposure",
+        "best_practices": [
+          "Use randomized question order",
+          "Implement proctoring (live or automated)",
+          "Verify candidate identity with FIDO or ID check",
+          "Monitor for suspicious patterns",
+          "Secure item bank from unauthorized access"
+        ]
+      },
+      "transparency": {
+        "definition": "Clear communication about assessment purpose, process, and criteria",
+        "recruiter_action": "Communicate assessment details to candidates upfront",
+        "best_practices": [
+          "Provide assessment information before testing",
+          "Explain scoring and interpretation",
+          "Offer appeals process",
+          "Share feedback when appropriate",
+          "Document all decisions"
+        ]
+      }
+    },
+
+    "hr_compliance_and_requirements": {
+      "regulatory_frameworks": [
+        "Equal Employment Opportunity (EEO) Laws",
+        "Americans with Disabilities Act (ADA)",
+        "Title VII Civil Rights Act",
+        "Adverse Impact Analysis requirements",
+        "Professional and Occupational Regulation",
+        "Industry-specific licensing requirements"
+      ],
+      
+      "compliance_checklist": {
+        "assessment_design": [
+          "Items validated for job relevance",
+          "Content bias review completed",
+          "Accommodations planned in advance",
+          "Passing scores set with defensible criteria",
+          "Assessment purpose documented"
+        ],
+        "administration": [
+          "Standardized procedures followed",
+          "Candidate identity verified",
+          "Assessment environment documented",
+          "Proctoring properly configured",
+          "Technical requirements met"
+        ],
+        "scoring_and_results": [
+          "Objective scoring applied consistently",
+          "Score validation completed",
+          "Adverse impact analysis conducted",
+          "Results documented with audit trail",
+          "Confidentiality maintained"
+        ],
+        "record_keeping": [
+          "Assessment administration records",
+          "Accommodation documentation",
+          "Score reports and analysis",
+          "Incident reports and appeals",
+          "Regulatory compliance documentation"
+        ]
+      },
+
+      "accommodations_and_accessibility": {
+        "types_of_accommodations": [
+          "Extended time (50%, 100%, custom)",
+          "Large print or screen magnification",
+          "Screen reader compatibility",
+          "Separate testing space",
+          "Reader/scribe services",
+          "Frequent breaks",
+          "Alternative response formats",
+          "Assistive technology support"
+        ],
+        "recruiter_responsibilities": [
+          "Request accommodation information upfront",
+          "Document all accommodation requests",
+          "Provide accommodations without penalty",
+          "Ensure technical compatibility",
+          "Maintain confidentiality of disability information",
+          "Verify accommodation effectiveness"
+        ]
+      },
+
+      "adverse_impact_analysis": {
+        "definition": "Statistical analysis to detect if assessment disparately impacts protected groups",
+        "recruiter_action": "Review ExamRoom analytics for demographic pass rate differences",
+        "process": [
+          "Analyze pass rates by protected groups (race, gender, age, etc.)",
+          "Calculate impact ratios (80% rule: lowest rate/highest rate)",
+          "Identify items or sections with significant disparities",
+          "Review flagged items for potential bias",
+          "Document analysis and actions taken",
+          "Monitor trends over time"
+        ],
+        "response_to_adverse_impact": [
+          "Conduct detailed item bias review",
+          "Consider alternative assessment methods",
+          "Adjust passing score if justified",
+          "Increase recruiting from underrepresented groups",
+          "Provide targeted preparation resources",
+          "Document business justification"
+        ]
+      }
+    },
+
+    "recruiter_best_practices": {
+      "assessment_selection": [
+        "Choose items aligned with actual job requirements",
+        "Select difficulty appropriate for candidate level",
+        "Balance question types for comprehensive evaluation",
+        "Use previously validated items when possible",
+        "Include items measuring critical competencies",
+        "Avoid items with known bias issues",
+        "Ensure sufficient item count for reliability"
+      ],
+
+      "candidate_communication": [
+        "Provide clear assessment instructions in advance",
+        "Explain purpose and how results will be used",
+        "Share technical requirements and system specifications",
+        "Offer practice tests or sample questions",
+        "Confirm scheduling details and time zone",
+        "Provide IT support contact information",
+        "Send reminder notifications before assessment",
+        "Explain accommodation process"
+      ],
+
+      "result_interpretation": [
+        "Compare individual scores to benchmarks and norms",
+        "Review competency-level breakdowns, not just total scores",
+        "Consider time-on-task patterns (speed vs. thoroughness)",
+        "Look for item consistency (item performance patterns)",
+        "Account for assessments taken multiple times",
+        "Consider external factors (technical issues, accommodations)",
+        "Use scores as one factor in hiring decision",
+        "Document decision rationale"
+      ],
+
+      "continuous_improvement": [
+        "Analyze assessment effectiveness metrics",
+        "Review item performance and discrimination statistics",
+        "Conduct periodic bias audits",
+        "Gather candidate feedback on assessment experience",
+        "Track predictive validity (hire performance correlation)",
+        "Update items based on job requirement changes",
+        "Benchmark against industry standards",
+        "Share insights with hiring managers"
+      ],
+
+      "security_and_integrity": [
+        "Limit item bank access to authorized personnel",
+        "Randomize question order and options",
+        "Monitor for suspicious patterns or anomalies",
+        "Review flagged assessments promptly",
+        "Maintain confidentiality of assessment materials",
+        "Implement proctoring consistently",
+        "Document and investigate incidents",
+        "Update security protocols regularly"
+      ]
+    },
+
+    "recruiter_workflow_examples": {
+      "high_volume_screening": {
+        "scenario": "Recruiting for 50 open positions with 500+ applicants",
+        "workflow": [
+          "Select screening assessment from Item Bank (entry-level items)",
+          "Configure automated proctoring for efficiency",
+          "Set time limit and passing score based on role requirements",
+          "Send assessment invitation to all qualified applicants",
+          "Monitor completion rates and technical issues",
+          "Review automated scoring and ranking",
+          "Select top 50-100 candidates for next stage",
+          "Analyze candidate pool demographics for bias check"
+        ],
+        "exr_features_used": [
+          "Item Bank filtering",
+          "Automated proctoring",
+          "Auto-scoring",
+          "Ranking and comparison reports",
+          "Demographic analysis"
+        ]
+      },
+
+      "specialized_role_assessment": {
+        "scenario": "Hiring specialized technical role requiring custom assessment",
+        "workflow": [
+          "Interview hiring manager to identify key competencies",
+          "Search Item Bank for technical items relevant to role",
+          "Supplement with performance-based tasks if needed",
+          "Configure live proctoring for complex assessment",
+          "Set reasonable time limit for comprehensive evaluation",
+          "Pilot test with internal SMEs to validate",
+          "Review psychometric properties and timing",
+          "Administer to candidate pool with detailed reporting",
+          "Conduct competency analysis and recommendations"
+        ],
+        "exr_features_used": [
+          "Item Bank search and filtering",
+          "Performance-based assessments",
+          "Live proctoring",
+          "Detailed competency reporting",
+          "Statistical analysis tools"
+        ]
+      },
+
+      "compliance_regulated_role": {
+        "scenario": "Hiring for regulated industry with compliance requirements",
+        "workflow": [
+          "Review regulatory requirements and competency standards",
+          "Select validated assessment from Item Bank",
+          "Document assessment validation study",
+          "Configure assessment with identity verification (FIDO)",
+          "Set audit trail and compliance documentation",
+          "Conduct adverse impact analysis beforehand",
+          "Administer with full proctoring and recording",
+          "Generate compliance documentation report",
+          "Maintain records for regulatory review"
+        ],
+        "exr_features_used": [
+          "Validated Item Bank items",
+          "Identity verification (FIDO)",
+          "Audit trail and documentation",
+          "Proctoring with recording",
+          "Compliance reporting"
+        ]
+      }
+    }
+  },
+
+  "key_features_for_recruiters": {
+    "assessment_customization": {
+      "description": "Tailor assessments to specific roles and competencies",
+      "recruiter_value": "Ensure job-relevant evaluation for accurate candidate comparison"
+    },
+    
+    "item_randomization": {
+      "description": "Randomize question order and options to enhance security",
+      "recruiter_value": "Prevent cheating and item memorization across candidate pool"
+    },
+    
+    "adaptive_testing": {
+      "description": "Adjust question difficulty based on candidate responses",
+      "recruiter_value": "More efficient assessment with better discrimination between candidates"
+    },
+    
+    "automated_scoring": {
+      "description": "Instant objective scoring with configurable rubrics for subjective items",
+      "recruiter_value": "Fast turnaround on results without manual scoring delays"
+    },
+    
+    "comprehensive_reporting": {
+      "description": "Detailed analytics on individual and group performance",
+      "recruiter_value": "Data-driven hiring decisions with visual comparisons and benchmarks"
+    },
+    
+    "identity_verification": {
+      "description": "Multi-factor authentication including FIDO and ID verification",
+      "recruiter_value": "Confidence that assessment results are from intended candidate"
+    },
+    
+    "proctoring_options": {
+      "description": "Flexible proctoring - live, automated, or hybrid",
+      "recruiter_value": "Balance between security, cost, and candidate experience based on role"
+    },
+    
+    "accommodation_management": {
+      "description": "Built-in support for accessible testing and accommodations",
+      "recruiter_value": "Ensure legal compliance and inclusive hiring practices"
+    },
+    
+    "audit_trail": {
+      "description": "Complete documentation of all assessment activities",
+      "recruiter_value": "Regulatory compliance and defensibility of hiring decisions"
+    },
+    
+    "integration_capabilities": {
+      "description": "API integration with ATS and HRIS systems",
+      "recruiter_value": "Seamless workflow without manual data transfer"
+    }
+  },
+
+  "implementation_roadmap": {
+    "phase_1_planning": {
+      "timeline": "Weeks 1-2",
+      "recruiter_activities": [
+        "Assess current hiring and assessment practices",
+        "Identify roles where ExamRoom.AI would add value",
+        "Define success metrics (time-to-hire, quality of hire, compliance)",
+        "Plan assessment strategy for priority roles",
+        "Identify Item Bank gaps or custom item needs"
+      ]
+    },
+    
+    "phase_2_setup": {
+      "timeline": "Weeks 3-4",
+      "recruiter_activities": [
+        "Configure ExamRoom.AI account and roles",
+        "Review and select appropriate items from Item Bank",
+        "Create custom items if needed",
+        "Set up assessment templates for priority roles",
+        "Configure proctoring settings and security protocols",
+        "Establish passing scores and competency mappings"
+      ]
+    },
+    
+    "phase_3_pilot": {
+      "timeline": "Weeks 5-6",
+      "recruiter_activities": [
+        "Pilot assessment with small candidate group",
+        "Gather feedback from candidates and hiring managers",
+        "Validate assessment timing and difficulty",
+        "Test proctoring and technical setup",
+        "Review psychometric properties and data quality",
+        "Make adjustments based on pilot results"
+      ]
+    },
+    
+    "phase_4_deployment": {
+      "timeline": "Week 7+",
+      "recruiter_activities": [
+        "Roll out to full recruitment process",
+        "Train recruiting team on platform usage",
+        "Monitor assessments and provide support",
+        "Track metrics against success criteria",
+        "Gather ongoing feedback and optimize"
+      ]
+    }
+  },
+
+  "frequently_asked_questions": {
+    "platform_basics": [
+      {
+        "question": "What is ExamRoom.AI and how does it help with recruitment?",
+        "answer": "ExamRoom.AI is an assessment platform that enables objective, standardized evaluation of candidates. It manages test questions, administers assessments with proctoring, and provides comprehensive analytics to support hiring decisions."
+      },
+      {
+        "question": "How large is the Item Bank and can I use it for my roles?",
+        "answer": "The Item Bank contains thousands of validated assessment items across professional, technical, and general competency areas. The Item Bank is searchable and filterable by competency, difficulty, and industry to find items relevant to your roles."
+      },
+      {
+        "question": "Can I create custom assessment items for my organization?",
+        "answer": "Yes, ExamRoom.AI allows creation of custom assessment items. These go through validation review before deployment to ensure quality and fairness."
+      }
+    ],
+    
+    "administration": [
+      {
+        "question": "What is the difference between live and automated proctoring?",
+        "answer": "Live proctoring uses real human proctors who monitor assessments in real-time. Automated proctoring uses AI and computer vision. Live is more secure but higher cost; automated is scalable and 24/7 but may impact candidate experience."
+      },
+      {
+        "question": "How do I verify candidate identity?",
+        "answer": "ExamRoom.AI supports multiple identity verification methods including FIDO authentication and government ID verification to ensure assessments are taken by the intended candidate."
+      },
+      {
+        "question": "How long does assessment administration take?",
+        "answer": "Assessment duration depends on your design - typically 30 minutes to 2 hours. Platform supports variable timing based on item count and complexity."
+      }
+    ],
+    
+    "results_and_compliance": [
+      {
+        "question": "How quickly do I get candidate scores?",
+        "answer": "Objective items are scored immediately. If assessment includes subjective items, manual review happens according to your process timeline. ExamRoom provides instant availability for all scoring as soon as grading is complete."
+      },
+      {
+        "question": "How do I know my assessment is legally defensible?",
+        "answer": "Use validated items from Item Bank, document assessment design rationale, analyze for adverse impact, provide reasonable accommodations, and maintain complete audit trail. ExamRoom.AI supports all these compliance components."
+      },
+      {
+        "question": "Can I accommodate candidates with disabilities?",
+        "answer": "Yes, ExamRoom.AI includes built-in accommodation features including extended time, large print, screen reader compatibility, separate testing space options, and custom accommodations as needed."
+      }
+    ]
+  },
+
+  "success_metrics": {
+    "hiring_efficiency": [
+      "Time-to-hire reduction",
+      "Assessment completion rate",
+      "Candidate drop-off rate",
+      "Cost per assessment"
+    ],
+    
+    "hiring_quality": [
+      "New hire performance rating",
+      "90-day retention rate",
+      "Time-to-productivity",
+      "Quality of hire score"
+    ],
+    
+    "compliance_and_fairness": [
+      "Adverse impact ratio by protected group",
+      "Item bias flags resolved",
+      "Accommodations provided",
+      "Appeals and disputes",
+      "Regulatory audit results"
+    ],
+    
+    "assessment_effectiveness": [
+      "Pass rate distribution",
+      "Item discrimination indices",
+      "Reliability coefficient (Cronbach's alpha)",
+      "Assessment predictive validity"
+    ]
+  }
+}

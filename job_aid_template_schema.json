@@ -1,0 +1,139 @@
+{
+  "metadata": {
+    "document_type": "Job Aid",
+    "version": "",
+    "created_date": "",
+    "last_updated": "",
+    "author": "",
+    "editor": "",
+    "status": "draft|review|approved|published"
+  },
+  "document_header": {
+    "title": "DOCUMENT_TITLE_HERE",
+    "subtitle": "SUBTITLE_HERE (Optional)"
+  },
+  "sections": {
+    "purpose": {
+      "section_type": "Heading 1",
+      "title": "Purpose of the Document",
+      "content": "text_description_of_purpose"
+    },
+    "pre_assumptions": {
+      "section_type": "Heading 1",
+      "title": "Pre-assumptions",
+      "content": "text_description_of_assumptions",
+      "items": [
+        {
+          "assumption_id": "1",
+          "description": "assumption_text"
+        }
+      ]
+    },
+    "systems_and_applications": {
+      "section_type": "Heading 1",
+      "title": "Systems and Applications",
+      "content": "description_of_systems",
+      "items": [
+        {
+          "system_id": "1",
+          "system_name": "application_or_system_name",
+          "description": "system_description"
+        }
+      ]
+    },
+    "intended_audience": {
+      "section_type": "Heading 1",
+      "title": "Intended Audience",
+      "content": "description_of_target_audience",
+      "audience_groups": [
+        {
+          "group_id": "1",
+          "role_title": "ROLE_NAME",
+          "description": "role_description"
+        }
+      ]
+    },
+    "procedure": {
+      "section_type": "Heading 1",
+      "title": "Procedure",
+      "description": "main_steps_and_workflow",
+      "subsections": [
+        {
+          "subsection_type": "Heading 2",
+          "title": "SUBSECTION_TITLE",
+          "role_specific": "role_or_audience_applying_to_this_section",
+          "steps": [
+            {
+              "step_number": 1,
+              "step_title": "STEP_TITLE",
+              "description": "detailed_step_instructions",
+              "sub_steps": [
+                {
+                  "sub_step": "a",
+                  "action": "specific_action_to_take"
+                }
+              ],
+              "important_notes": "any_warnings_or_important_info",
+              "screenshot_reference": "screenshot_id_if_applicable"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "formatting_guidelines": {
+    "paragraph_styles": {
+      "Heading 1": "main_section_titles",
+      "Heading 2": "subsection_titles",
+      "Heading 4": "subsub_sections",
+      "List Paragraph": "bulleted_or_numbered_list_items",
+      "Normal": "body_text"
+    },
+    "text_formatting": {
+      "bold": "used_for_emphasis_or_important_terms",
+      "italic": "used_for_variable_names_or_system_specific_terms",
+      "underline": "used_for_emphasis_when_needed"
+    }
+  },
+  "optional_sections": {
+    "appendices": [
+      {
+        "appendix_id": "A",
+        "title": "APPENDIX_TITLE",
+        "content": "supplementary_reference_material"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "TERM_NAME",
+        "definition": "term_definition"
+      }
+    ],
+    "frequently_asked_questions": [
+      {
+        "question": "COMMON_QUESTION",
+        "answer": "answer_to_question"
+      }
+    ],
+    "troubleshooting": [
+      {
+        "issue": "COMMON_ISSUE",
+        "cause": "why_issue_occurs",
+        "resolution": "how_to_resolve"
+      }
+    ]
+  },
+  "structure_notes": {
+    "document_purpose": "This template is structured for Job Aid documentation used to guide users through procedures and workflows",
+    "typical_use": "Training materials, process documentation, step-by-step guides",
+    "based_on": "Analysis of template.docx showing 274 paragraphs, Heading 1-4 hierarchy, List Paragraph formatting style (206 instances)",
+    "paragraph_distribution": {
+      "List Paragraph": 206,
+      "Normal": 24,
+      "Heading 4": 18,
+      "Normal (Web)": 15,
+      "Heading 1": 8,
+      "Heading 2": 3
+    }
+  }
+}

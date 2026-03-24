@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExamRoom.AI - Recruiter & HR Consultant Job Aid</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #0052CC;
+            --primary-dark: #0040A1;
+            --primary-light: #1F77FF;
+            --secondary-color: #00A699;
+            --secondary-light: #26D0CE;
+            --accent-color: #FFB81C;
+            --accent-dark: #F0A000;
+            --success-color: #00A699;
+            --warning-color: #FF6B35;
+            --danger-color: #E74C3C;
+            --dark-bg: #0B1929;
+            --light-bg: #F5F7FA;
+            --white: #FFFFFF;
+            --text-primary: #1B2533;
+            --text-secondary: #5A6B7A;
+            --border-color: #DDE5ED;
+            --card-shadow: 0 8px 24px rgba(11, 25, 41, 0.12);
+            --card-shadow-hover: 0 12px 32px rgba(11, 25, 41, 0.16);
+            --border-radius: 8px;
+            --border-radius-lg: 16px;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #F5F7FA 0%, #EBF0F8 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 50px 40px;
+            border-radius: var(--border-radius-lg);
+            margin-bottom: 30px;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+        }
+
+        header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.8em;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            opacity: 0.95;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .metadata {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            font-size: 0.95em;
+            opacity: 0.9;
+        }
+
+        /* NAVIGATION */
+        nav {
+            background: var(--white);
+            padding: 20px;
+            border-radius: var(--border-radius-lg);
+            margin-bottom: 30px;
+            box-shadow: var(--card-shadow);
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+        }
+
+        .nav-title {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1em;
+        }
+
+        .nav-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 10px;
+        }
+
+        .nav-btn {
+            padding: 12px 18px;
+            background: var(--light-bg);
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+            font-size: 0.95em;
+        }
+
+        .nav-btn:hover {
+            background: var(--primary-light);
+            color: var(--white);
+            border-color: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(31, 119, 255, 0.3);
+        }
+
+        .nav-btn.active {
+            background: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+
+        /* SECTIONS */
+        .sections-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        section {
+            display: none;
+            background: var(--white);
+            padding: 40px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--card-shadow);
+            animation: fadeIn 0.3s ease;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.05em;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+
+        section h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4em;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        /* CALLOUTS */
+        .callout {
+            padding: 20px 24px;
+            border-left: 4px solid var(--primary-color);
+            border-radius: var(--border-radius);
+            margin: 20px 0;
+            background: rgba(0, 82, 204, 0.05);
+        }
+
+        .callout.warning {
+            border-left-color: var(--warning-color);
+            background: rgba(255, 107, 53, 0.05);
+        }
+
+        .callout.success {
+            border-left-color: var(--success-color);
+            background: rgba(0, 166, 153, 0.05);
+        }
+
+        .callout strong {
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .callout.warning strong {
+            color: var(--warning-color);
+        }
+
+        .callout.success strong {
+            color: var(--success-color);
+        }
+
+        /* CARDS GRID */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #F5F7FA 0%, #EBF0F8 100%);
+            padding: 25px;
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--card-shadow-hover);
+            border-color: var(--primary-light);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 1.2em;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* COMPARISON TABLE */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+        }
+
+        .comparison-table thead {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+        }
+
+        .comparison-table th {
+            padding: 16px;
+            text-align: left;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .comparison-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .comparison-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tbody tr:hover {
+            background: var(--light-bg);
+        }
+
+        /* DECISION MATRIX */
+        .decision-matrix {
+            margin: 25px 0;
+        }
+
+        .matrix-row {
+            margin-bottom: 15px;
+        }
+
+        .matrix-header {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--secondary-light) 100%);
+            color: var(--white);
+            padding: 12px 16px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .matrix-header:hover {
+            transform: translateX(4px);
+            box-shadow: var(--card-shadow);
+        }
+
+        .matrix-content {
+            display: none;
+            background: var(--light-bg);
+            padding: 16px;
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            margin-top: -4px;
+        }
+
+        .matrix-content.expanded {
+            display: block;
+        }
+
+        .matrix-content p {
+            margin: 10px 0;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* WORKFLOW STEPS */
+        .workflow-container {
+            margin: 25px 0;
+        }
+
+        .workflow-phase {
+            margin-bottom: 25px;
+        }
+
+        .phase-title {
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-dark) 100%);
+            color: var(--dark-bg);
+            padding: 12px 16px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 15px;
+        }
+
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-left: 20px;
+        }
+
+        .step {
+            display: flex;
+            gap: 15px;
+            background: var(--light-bg);
+            padding: 15px 16px;
+            border-radius: var(--border-radius);
+            border-left: 3px solid var(--primary-color);
+        }
+
+        .step-number {
+            background: var(--primary-color);
+            color: var(--white);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            margin: 0 0 6px 0;
+            color: var(--primary-color);
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .step-content p {
+            margin: 0;
+            color: var(--text-secondary);
+            font-size: 0.95em;
+        }
+
+        /* BEST PRACTICES SECTION */
+        .practice-card {
+            background: linear-gradient(135deg, #F5F7FA 0%, #EBF0F8 100%);
+            padding: 20px;
+            border-radius: var(--border-radius-lg);
+            border: 2px solid var(--border-color);
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .practice-card:hover {
+            border-color: var(--primary-light);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .practice-card h4 {
+            color: var(--primary-color);
+            margin: 0 0 8px 0;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .practice-card p {
+            margin: 0;
+            color: var(--text-secondary);
+            font-size: 0.95em;
+        }
+
+        /* COLLAPSIBLE FAQ */
+        .faq-item {
+            margin-bottom: 15px;
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-color) 100%);
+            color: var(--white);
+            padding: 16px;
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .faq-question:hover {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            padding-left: 20px;
+        }
+
+        .faq-toggle {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .faq-answer {
+            display: none;
+            background: var(--light-bg);
+            padding: 16px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .faq-answer.expanded {
+            display: block;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark-bg);
+            color: var(--white);
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+            border-radius: var(--border-radius-lg);
+            font-size: 0.9em;
+        }
+
+        footer p {
+            margin: 8px 0;
+            opacity: 0.9;
+        }
+
+        /* LISTS */
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 24px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        strong {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            section {
+                padding: 25px;
+            }
+
+            section h2 {
+                font-size: 1.5em;
+            }
+
+            .nav-items {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-table th, .comparison-table td {
+                padding: 12px;
+                font-size: 0.9em;
+            }
+
+            .metadata {
+                gap: 15px;
+                font-size: 0.85em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <header>
+            <h1>ExamRoom.AI Job Aid</h1>
+            <p class="subtitle">Comprehensive Guide for Recruiters & HR Consultants</p>
+            <div class="metadata">
+                <span>📅 Last Updated: March 23, 2026</span>
+                <span>👥 Target: Recruiters & HR Consultants</span>
+                <span>🎯 Version: 1.0</span>
+            </div>
+        </header>
+
+        <!-- NAVIGATION -->
+        <nav>
+            <div class="nav-title">📖 Quick Navigation</div>
+            <div class="nav-items">
+                <button class="nav-btn active" onclick="showSection('purpose')">Purpose</button>
+                <button class="nav-btn" onclick="showSection('platforms')">Platforms</button>
+                <button class="nav-btn" onclick="showSection('decision-guide')">Decision Guide</button>
+                <button class="nav-btn" onclick="showSection('workflow')">Workflow</button>
+                <button class="nav-btn" onclick="showSection('best-practices')">Best Practices</button>
+                <button class="nav-btn" onclick="showSection('faq')">FAQ</button>
+            </div>
+        </nav>
+
+        <!-- SECTIONS -->
+        <div class="sections-container">
+            <!-- PURPOSE SECTION -->
+            <section id="purpose" class="active">
+                <h2>Purpose of This Document</h2>
+                <p class="section-subtitle">Your complete guide to ExamRoom.AI assessment administration</p>
+                
+                <div class="callout info">
+                    <strong>📌 Quick Overview</strong>
+                    This job aid provides step-by-step guidance on using ExamRoom.AI and Spark Hire platforms to efficiently screen, evaluate, and select candidates for your organization.
+                </div>
+
+                <div class="cards-grid">
+                    <div class="card">
+                        <h3>🎯 What You'll Learn</h3>
+                        <p>Understand ExamRoom.AI features, test administration processes, and best practices for recruitment assessments.</p>
+                    </div>
+                    <div class="card">
+                        <h3>👥 Who This Is For</h3>
+                        <p>Recruiters, HR Consultants, Talent Acquisition Professionals, and Assessment Administrators.</p>
+                    </div>
+                    <div class="card">
+                        <h3>⏱️ How To Use</h3>
+                        <p>Navigate through sections using the menu above. Click on items to expand details and find relevant information quickly.</p>
+                    </div>
+                </div>
+
+                <h3 style="color: var(--primary-color); margin-top: 30px; margin-bottom: 15px;">Pre-Assumptions</h3>
+                <ul style="padding-left: 20px; color: #475569; line-height: 2;">
+                    <li>You have access to ExamRoom.AI platform</li>
+                    <li>You understand basic recruitment processes</li>
+                    <li>You have candidate pools to assess</li>
+                    <li>You're familiar with your organization's hiring criteria</li>
+                    <li>You have adequate budget for assessment tools</li>
+                </ul>
+            </section>
+
+            <!-- PLATFORMS SECTION -->
+            <section id="platforms">
+                <h2>Platform Overview</h2>
+                <p class="section-subtitle">Understanding ExamRoom.AI and Spark Hire</p>
+
+                <h3>ExamRoom.AI Platform</h3>
+                <div class="cards-grid">
+                    <div class="card">
+                        <h3>✨ Core Features</h3>
+                        <ul style="margin: 0; padding-left: 20px;">
+                            <li>AI-powered assessments</li>
+                            <li>Real-time scoring</li>
+                            <li>Video interviews</li>
+                            <li>Behavioral analysis</li>
+                            <li>Custom test creation</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>🎯 Best For</h3>
+                        <ul style="margin: 0; padding-left: 20px;">
+                            <li>Technical roles</li>
+                            <li>Competency assessment</li>
+                            <li>Large-volume screening</li>
+                            <li>Remote hiring</li>
+                            <li>Compliance-heavy industries</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Spark Hire Platform</h3>
+                <div class="cards-grid">
+                    <div class="card">
+                        <h3>🎬 Core Features</h3>
+                        <ul style="margin: 0; padding-left: 20px;">
+                            <li>Video interviews</li>
+                            <li>One-way recordings</li>
+                            <li>Candidate messaging</li>
+                            <li>Interview analytics</li>
+                            <li>ATS integration</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>💼 Best For</h3>
+                        <ul style="margin: 0; padding-left: 20px;">
+                            <li>General hiring</li>
+                            <li>Soft skills evaluation</li>
+                            <li>Communication assessment</li>
+                            <li>Quick screening</li>
+                            <li>Distributed teams</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="callout success">
+                    <strong>✅ Pro Tip:</strong> Use ExamRoom.AI for technical or competency-based screening, and Spark Hire for communication and behavioral evaluation.
+                </div>
+
+                <h3>Comparison Matrix</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>ExamRoom.AI</th>
+                            <th>Spark Hire</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Assessment Type</strong></td>
+                            <td>Technical + Behavioral</td>
+                            <td>Behavioral + Communication</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Scoring</strong></td>
+                            <td>Automated AI</td>
+                            <td>Manual Review</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Time Investment</strong></td>
+                            <td>Low to Medium</td>
+                            <td>Medium</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cost</strong></td>
+                            <td>$$</td>
+                            <td>$</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Customization</strong></td>
+                            <td>High</td>
+                            <td>Medium</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- DECISION GUIDE SECTION -->
+            <section id="decision-guide">
+                <h2>Decision Framework</h2>
+                <p class="section-subtitle">Choose the right assessment tool for your situation</p>
+
+                <div class="decision-matrix">
+                    <div class="matrix-row">
+                        <div class="matrix-header" onclick="toggleMatrix(this)">👨‍💼 Role Type: Technical Positions → Use ExamRoom.AI</div>
+                        <div class="matrix-content">
+                            <p><strong>Why?</strong> Technical assessments require objective, measurable criteria. ExamRoom.AI's automated scoring removes bias and ensures consistency.</p>
+                            <p><strong>Examples:</strong> Software engineers, data analysts, systems administrators, database administrators, QA engineers.</p>
+                            <p><strong>Assessment Elements:</strong> Code reviews, problem-solving scenarios, technical knowledge tests, debugging exercises.</p>
+                        </div>
+                    </div>
+
+                    <div class="matrix-row">
+                        <div class="matrix-header" onclick="toggleMatrix(this)">🗣️ Role Type: Communication-Heavy → Use Spark Hire</div>
+                        <div class="matrix-content">
+                            <p><strong>Why?</strong> Soft skills require subjective evaluation. Spark Hire's video interviews allow assessment of communication, professionalism, and presentation skills.</p>
+                            <p><strong>Examples:</strong> Sales representatives, customer service, account managers, recruiters, public relations.</p>
+                            <p><strong>Assessment Elements:</strong> One-way video questions, behavioral responses, communication clarity, personality fit.</p>
+                        </div>
+                    </div>
+
+                    <div class="matrix-row">
+                        <div class="matrix-header" onclick="toggleMatrix(this)">⚖️ High Volume Screening → Use ExamRoom.AI</div>
+                        <div class="matrix-content">
+                            <p><strong>Why?</strong> When screening hundreds of candidates, automated assessment saves time and ensures uniform evaluation.</p>
+                            <p><strong>Efficiency Gain:</strong> 80-90% faster screening compared to manual review.</p>
+                            <p><strong>Ideal For:</strong> University recruiting, entry-level positions, contractor networks, global hiring campaigns.</p>
+                        </div>
+                    </div>
+
+                    <div class="matrix-row">
+                        <div class="matrix-header" onclick="toggleMatrix(this)">🎯 Compliance-Critical Roles → Use ExamRoom.AI</div>
+                        <div class="matrix-content">
+                            <p><strong>Why?</strong> ExamRoom.AI provides detailed audit trails, ensuring EEOC and adverse impact compliance.</p>
+                            <p><strong>Documentation:</strong> Every assessment is scored consistently with full reporting capabilities.</p>
+                            <p><strong>Industries:</strong> Healthcare, finance, legal, utilities, government contracts.</p>
+                        </div>
+                    </div>
+
+                    <div class="matrix-row">
+                        <div class="matrix-header" onclick="toggleMatrix(this)">💡 Quick Evaluation Needed → Use Spark Hire</div>
+                        <div class="matrix-content">
+                            <p><strong>Why?</strong> Spark Hire is faster to deploy and simpler to evaluate than technical assessments.</p>
+                            <p><strong>Timeline:</strong> Setup in hours, results in 24-48 hours.</p>
+                            <p><strong>Use Case:</strong> Urgent hiring, seasonal roles, replacement hiring, contractor assessment.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout warning">
+                    <strong>⚠️ Important Consideration:</strong> The best approach often uses BOTH platforms in sequence. Use ExamRoom.AI first for technical screening, then Spark Hire for finalists to assess cultural fit and soft skills.
+                </div>
+            </section>
+
+            <!-- WORKFLOW SECTION -->
+            <section id="workflow">
+                <h2>Recruitment Workflow</h2>
+                <p class="section-subtitle">Step-by-step process for implementing assessments</p>
+
+                <div class="workflow-container">
+                    <div class="workflow-phase">
+                        <div class="phase-title">📋 Phase 1: Preparation & Planning</div>
+                        <div class="steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Define Assessment Needs</h4>
+                                    <p>Identify which role competencies need assessment. Document required skills, experience levels, and job-critical knowledge areas.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Select Platform(s)</h4>
+                                    <p>Using the decision framework above, choose ExamRoom.AI, Spark Hire, or both for your assessment strategy.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Configure Test Parameters</h4>
+                                    <p>Set assessment difficulty, time limits, question counts, and passing scores. Align with role requirements and candidate pool expectations.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Create Scoring Rubric</h4>
+                                    <p>Document what constitutes pass/fail, develop evaluation criteria, and calibrate with your team.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workflow-phase">
+                        <div class="phase-title">📤 Phase 2: Distribution & Administration</div>
+                        <div class="steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Send Assessments</h4>
+                                    <p>Invite candidates through your ATS integration or direct email. Provide clear instructions and set realistic completion deadlines (typically 3-7 days).</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Monitor Participation</h4>
+                                    <p>Track completion rates daily. Send reminders to non-completers and offer technical support if needed.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Proctor for Security</h4>
+                                    <p>For high-security roles, ensure proper test environment, identification verification, and anti-cheating measures.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Manage Accommodations</h4>
+                                    <p>Provide extended time for ADA accommodations. Document all modifications for compliance and audit trail.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workflow-phase">
+                        <div class="phase-title">📊 Phase 3: Evaluation & Analysis</div>
+                        <div class="steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Review Automated Scores</h4>
+                                    <p>ExamRoom.AI provides immediate scoring. Review reports, check for outliers, and identify top performers.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Conduct Manual Review</h4>
+                                    <p>For Spark Hire or borderline candidates, perform detailed video review and scoring against your rubric.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Check Adverse Impact</h4>
+                                    <p>Analyze results by demographic group. Document any disparate impact and have business justification ready for compliance.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Create Pass/Fail Groups</h4>
+                                    <p>Identify top performers (advance to interview), borderline (consider re-assessment), and non-qualified (respectfully decline).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workflow-phase">
+                        <div class="phase-title">🎤 Phase 4: Interview & Selection</div>
+                        <div class="steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Prepare Interview Questions</h4>
+                                    <p>Use assessment results to guide interview focus. Ask deeper questions about assessed competencies.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Conduct Interviews</h4>
+                                    <p>Score consistently using structured interviews. Reference assessment performance to explore strengths and gaps.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Reference Checks</h4>
+                                    <p>Verify assessment results through reference calls. Ask about job-critical competencies identified in screening.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Make Offer Decision</h4>
+                                    <p>Combine assessment, interview, and reference scores. Document decision rationale for future compliance audit.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workflow-phase">
+                        <div class="phase-title">📈 Phase 5: Measurement & Optimization</div>
+                        <div class="steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Track Hire Performance</h4>
+                                    <p>At 90 days, 6 months, and 1 year, measure hired candidate performance against their assessment scores.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Calculate Validity</h4>
+                                    <p>Determine correlation between assessment scores and on-the-job performance. Adjust cutoff scores if needed.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Audit for Bias</h4>
+                                    <p>Annually review adverse impact data. Ensure assessment remains job-related and predictive for all groups.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Optimize & Iterate</h4>
+                                    <p>Update assessments quarterly based on new role requirements, market changes, and performance data.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BEST PRACTICES SECTION -->
+            <section id="best-practices">
+                <h2>Best Practices & Compliance</h2>
+                <p class="section-subtitle">Ensure fairness, compliance, and effectiveness</p>
+
+                <h3>Assessment Design Principles</h3>
+                <div class="practice-card">
+                    <h4>✅ Job-Related & Valid</h4>
+                    <p>Assessments must measure competencies truly required for the job. Document the job analysis supporting your assessment design. Use industry research and SME input to validate question relevance.</p>
+                </div>
+                <div class="practice-card">
+                    <h4>✅ Standardized Administration</h4>
+                    <p>All candidates receive identical questions, time limits, and instructions. This consistency is legally required under FCRA and EEOC guidelines and improves statistical validity.</p>
+                </div>
+                <div class="practice-card">
+                    <h4>✅ Clear Scoring Standards</h4>
+                    <p>Create objective scoring rubrics. Train evaluators to score consistently. For Spark Hire, score all videos using identical criteria to reduce subjective bias.</p>
+                </div>
+                <div class="practice-card">
+                    <h4>✅ Transparent Communication</h4>
+                    <p>Tell candidates upfront that assessments are part of your hiring process. Explain what's being assessed and why. Provide score feedback to unsuccessful candidates upon request.</p>
+                </div>
+
+                <h3>Compliance Requirements</h3>
+                <div class="practice-card">
+                    <h4>⚖️ FCRA Compliance</h4>
+                    <p>ExamRoom.AI and Spark Hire assessments may be considered "background checks" under the Fair Credit Reporting Act. Obtain signed written consent before administering. Provide FCRA-compliant disclosure forms. Have adverse action procedures ready.</p>
+                </div>
+                <div class="practice-card">
+                    <h4>⚖️ EEOC Adverse Impact</h4>
+                    <p>Track pass rates by race/ethnicity, gender, age, disability. If any group has a pass rate below 80% of the highest group, you may have adverse impact. Document business necessity and job-relatedness. Consider alternative assessments if disparate impact exists.</p>
+                </div>
+                <div class="practice-card">
+                    <h4>⚖️ ADA Accommodations</h4>
+                    <p>Provide extended time for candidates with disabilities (typically 50% extra time). Offer alternative formats (large print, screen reader compatible, etc.). Keep detailed accommodation records. Never penalize for requesting accommodation.</p>
+                </div>
+                <div class="practice-card">
+                    <h4>⚖️ GDPR/Privacy Compliance</h4>
+                    <p>For European candidates, ensure GDPR compliance. Get explicit consent for data processing. Retain assessment data only as long as necessary (typically 1-3 years). Provide candidates access to their assessment data on request.</p>
+                </div>
+
+                <h3>Adverse Impact Prevention</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Risk Factor</th>
+                            <th>Prevention Strategy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Language-Based Bias</strong></td>
+                            <td>Use clear, simple language unless language proficiency is job-required. Avoid industry jargon unless essential. Test with diverse proofreaders.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cultural Assumptions</strong></td>
+                            <td>Avoid culture-specific references or examples. Use scenarios that are universally understandable. Review with diverse content team.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Difficulty Calibration</strong></td>
+                            <td>Pilot test with candidate pools to ensure difficulty aligns with actual job requirements. Adjust if certain groups consistently underperform.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Time Pressure</strong></td>
+                            <td>Allow adequate time for completion. Rushed assessments may disadvantage certain populations. Typical guideline: 1.5 minutes per question minimum.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Technology Barriers</strong></td>
+                            <td>Test across devices and internet connections. Provide tech support phone line. Offer alternative assessment methods if tech is not job-critical.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Accommodations & Accessibility</h3>
+                <div class="practice-card">
+                    <h4>🦾 Disability Accommodations</h4>
+                    <p><strong>Extended Time:</strong> 50% additional time standard; up to 100% for severe disabilities. <strong>Screen Reader Compatible:</strong> Ensure Spark Hire videos have closed captions. Provide transcripts. <strong>Large Print:</strong> ExamRoom.AI supports 150-200% zoom. <strong>Separate Room:</strong> Allow test-takers to use quiet environment with monitor. <strong>Scribe/Reader:</strong> Provide if writing or reading is not job-critical.</p>
+                </div>
+                <div class="practice-card">
+                    <h4>👨‍🦯 Reasonable Accommodations Process</h4>
+                    <p><strong>1. Request:</strong> Candidate requests accommodation in writing (email acceptable). <strong>2. Analyze:</strong> Determine if job-related and show business necessity. <strong>3. Implement:</strong> Provide accommodation without penalty. <strong>4. Document:</strong> Keep detailed records of request, analysis, and accommodation provided. <strong>5. Evaluate:</strong> Test accommodation to ensure it works for candidate.</p>
+                </div>
+
+                <h3>Data Security & Privacy</h3>
+                <div class="practice-card">
+                    <h4>🔒 Candidate Data Protection</h4>
+                    <p>Assessments contain sensitive data: performance history, behavioral responses, video recordings. Limit access to HR and hiring managers only. Use password-protected accounts. Enable two-factor authentication. Encrypt data in transit and at rest. Conduct regular access audits.</p>
+                </div>
+                <div class="practice-card">
+                    <h4>🔒 Retention Policies</h4>
+                    <p>Define how long to retain assessment data. Typical: hired employees (2-3 years), non-hired (1 year), legal disputes (7 years). Delete data securely beyond retention period. Document deletion. Some states require 1-year minimum retention.</p>
+                </div>
+
+                <h3>Documentation & Audit Trail</h3>
+                <div class="practice-card">
+                    <h4>📋 Record Keeping Best Practices</h4>
+                    <p>Keep: Job descriptions supporting assessment, job analyses, pilot test results, scoring rubrics, adverse impact analyses, accommodation requests and outcomes, training records for scorers, validation studies. This documentation defends against discrimination claims and supports legal compliance.</p>
+                </div>
+            </section>
+
+            <!-- FAQ SECTION -->
+            <section id="faq">
+                <h2>Frequently Asked Questions</h2>
+                <p class="section-subtitle">Practical guidance for common scenarios</p>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Can I use these assessments in multiple countries?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, but with important caveats. US laws (FCRA, EEOC, ADA) apply if candidates are US-based. European candidates trigger GDPR requirements. Canada requires provincial compliance. For international hiring, consult legal counsel about data residency, privacy, and employment laws in each jurisdiction. ExamRoom.AI and Spark Hire support multiple languages, but content must still comply with local regulations.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>What if a candidate scores low but has strong past experience?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Treat this as valuable interview fodder. Ask specifically about the low-scoring areas. Possible reasons: test anxiety, bad day, assessment doesn't capture their actual capability, or they genuinely lack this specific skill. Don't automatically reject based on scores alone. Use assessment as data point alongside resume and references. If you advance borderline candidates to interviews, ensure you're doing this consistently, not sporadically, to maintain legally defensible process.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>How do I handle technical issues during testing?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Have a support process ready: (1) Post testing window help desk available, (2) If candidate reports mid-test: allow restart with fresh test (don't count partial attempt), (3) Document all issues for audit trail, (4) Be consistent—if one candidate gets restart, others with similar issues should too, (5) Consider backup assessment methods for critical technical failures, (6) Communicate clearly with candidate about issue resolution.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>What score should I use as the passing threshold?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        This depends on: (1) Job criticality—safety-sensitive roles need higher passing scores, (2) Candidate pool quality—strong pool may support higher cutoff, (3) Adverse impact—if high cutoff creates disparate impact, lower it if possible while maintaining job-relatedness, (4) Validation data—ideally, you've studied correlation between scores and job performance to set evidence-based cutoff, (5) Business needs—fewer false negatives (miss good candidates) vs. false positives (hire weak candidates).
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>How transparent should I be about assessment criteria?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        More transparency is generally better. Tell candidates: (1) What competencies are being assessed and why they're job-critical, (2) How the assessment works (time limit, question count, format), (3) How you'll use results (part of hiring decision), (4) Timeline for feedback, (5) That they can request accommodation, (6) What happens if they don't pass (typically, they're not advanced to interview). FCRA and best practice both recommend this transparency. It improves candidate experience and reduces legal risk.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Can I use assessment data to make conclusions about culture fit?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Carefully. ExamRoom.AI behavioral components and Spark Hire video responses can provide culture fit signals, but don't rely on them as determinants. Culture fit assessment is inherently subjective and carries discrimination risk—what you perceive as "bad culture fit" may actually be protected class differences. Use assessments for job-critical competencies only. Make culture fit decisions through interviews with trained, consistent interviewers using structured questions. Document that culture fit preferences are based on genuine business needs, not protected characteristics.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>How often should I update my assessments?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        At minimum annually, but preferably quarterly for fast-changing roles. Update when: (1) Job description changes significantly, (2) New technologies or tools become job-critical, (3) You identify adverse impact issues, (4) Hired employees' performance data shows assessment wasn't predictive, (5) Industry standards shift. Keep version control of assessments. Document changes for audit trail. Whenever you update, consider piloting with small candidate pool before full deployment.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>What should I do if I discover adverse impact in my assessment data?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        (1) Don't panic—this is discoverable in EEOC investigations anyway. (2) Document your analysis thoroughly showing the disparate impact. (3) Conduct job analysis to justify business necessity. (4) If assessment is not job-critical, consider removing or modifying it. (5) If it's job-critical but still shows disparate impact, investigate why: cultural bias in questions, language barrier, testing conditions, time pressure, etc. (6) Pilot alternative assessment methods. (7) If modifying, track results for next 6-12 months to ensure change reduced disparate impact. (8) Keep all documentation for compliance defense.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Can I share assessment results with hiring managers?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes—hiring managers need assessment results to make hiring decisions. However: (1) Only share with those directly involved in hiring decision, (2) Educate managers on how to interpret results (correlation is not causation), (3) Warn against bias—assessment is data point, not destiny, (4) Don't include personally identifiable information beyond what's needed, (5) Maintain confidentiality—don't share results with other candidates or team members not involved in hiring, (6) Under GDPR, candidates can request their results, so maintain ability to provide this.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>What's the difference between using assessment as a screening tool vs. validation?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <strong>Screening:</strong> You use assessment results to decide who moves forward (pass/fail gate). Lighter compliance burden but less data-driven. <strong>Validation:</strong> You use assessment results to predict job performance, studying correlation between scores and actual job performance. Heavier documentation burden but stronger legal defense. Best practice: Start with screening based on job analysis and industry benchmarks. After 6-12 months of hiring data, validate your cutoff scores. If they don't predict performance, adjust. This iterative validation process builds increasingly defensible assessments.
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>🎯 ExamRoom.AI Job Aid - Recruiter & HR Consultant Guide</p>
+            <p>Last Updated: March 23, 2026 | Version 1.0</p>
+            <p>Questions? Contact your HR or Recruiting Operations team for support.</p>
+        </footer>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Remove active class from all nav buttons
+            const navBtns = document.querySelectorAll('.nav-btn');
+            navBtns.forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Show selected section
+            const selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.classList.add('active');
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+
+        function toggleMatrix(element) {
+            const content = element.nextElementSibling;
+            if (content && content.classList.contains('matrix-content')) {
+                content.classList.toggle('expanded');
+                element.style.borderRadius = content.classList.contains('expanded') ? '8px 8px 0 0' : '8px';
+            }
+        }
+
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            if (answer && answer.classList.contains('faq-answer')) {
+                answer.classList.toggle('expanded');
+                const toggle = element.querySelector('.faq-toggle');
+                toggle.textContent = answer.classList.contains('expanded') ? '−' : '+';
+            }
+        }
+    </script>
+</body>
+</html>
