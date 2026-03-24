@@ -541,6 +541,360 @@
                 font-size: 0.85em;
             }
         }
+
+        /* Edit Button and Modal Styles */
+        .edit-btn {
+            background: linear-gradient(135deg, #0052CC 0%, #00A699 100%);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 82, 204, 0.2);
+        }
+
+        .edit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 82, 204, 0.3);
+        }
+
+        .edit-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Modal Editor Styles */
+        #editorModal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+            margin: 2% auto;
+            padding: 30px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 90%;
+            height: 85vh;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #0052CC;
+            padding-bottom: 15px;
+        }
+
+        .modal-header h2 {
+            color: #0052CC;
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        .close-btn {
+            color: #999;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-btn:hover {
+            color: #000;
+        }
+
+        #htmlEditor {
+            flex: 1;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: none;
+            overflow: auto;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        #htmlEditor:focus {
+            outline: none;
+            border-color: #0052CC;
+            box-shadow: 0 0 5px rgba(0, 82, 204, 0.2);
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+
+        .modal-buttons button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95em;
+        }
+
+        .save-btn {
+            background: linear-gradient(135deg, #0052CC 0%, #00A699 100%);
+            color: white;
+        }
+
+        .save-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 82, 204, 0.3);
+        }
+
+        .cancel-btn {
+            background-color: #e0e0e0;
+            color: #333;
+        }
+
+        .cancel-btn:hover {
+            background-color: #d0d0d0;
+        }
+
+        .editor-info {
+            background-color: #FFF3CD;
+            border: 1px solid #FFE69C;
+            border-radius: 4px;
+            padding: 12px;
+            margin-bottom: 15px;
+            color: #856404;
+            font-size: 0.9em;
+            display: flex;
+            gap: 10px;
+        }
+
+        .editor-info strong {
+            color: #856404;
+        }
+
+        @media (max-width: 768px) {
+            .modal-content {
+                width: 95%;
+                height: 90vh;
+                padding: 15px;
+            }
+
+            #htmlEditor {
+                font-size: 12px;
+            }
+
+            .modal-header h2 {
+                font-size: 1.2em;
+            }
+        }
+
+        /* Edit Button and Modal Styles */
+        .edit-btn {
+            background: linear-gradient(135deg, #0052CC 0%, #00A699 100%);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 82, 204, 0.2);
+        }
+
+        .edit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 82, 204, 0.3);
+        }
+
+        .edit-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Modal Editor Styles */
+        #editorModal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+            margin: 2% auto;
+            padding: 30px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 90%;
+            height: 85vh;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #0052CC;
+            padding-bottom: 15px;
+        }
+
+        .modal-header h2 {
+            color: #0052CC;
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        .close-btn {
+            color: #999;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-btn:hover {
+            color: #000;
+        }
+
+        #htmlEditor {
+            flex: 1;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: none;
+            overflow: auto;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        #htmlEditor:focus {
+            outline: none;
+            border-color: #0052CC;
+            box-shadow: 0 0 5px rgba(0, 82, 204, 0.2);
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+
+        .modal-buttons button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95em;
+        }
+
+        .save-btn {
+            background: linear-gradient(135deg, #0052CC 0%, #00A699 100%);
+            color: white;
+        }
+
+        .save-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 82, 204, 0.3);
+        }
+
+        .cancel-btn {
+            background-color: #e0e0e0;
+            color: #333;
+        }
+
+        .cancel-btn:hover {
+            background-color: #d0d0d0;
+        }
+
+        .editor-info {
+            background-color: #FFF3CD;
+            border: 1px solid #FFE69C;
+            border-radius: 4px;
+            padding: 12px;
+            margin-bottom: 15px;
+            color: #856404;
+            font-size: 0.9em;
+            display: flex;
+            gap: 10px;
+        }
+
+        .editor-info strong {
+            color: #856404;
+        }
+
+        @media (max-width: 768px) {
+            .modal-content {
+                width: 95%;
+                height: 90vh;
+                padding: 15px;
+            }
+
+            #htmlEditor {
+                font-size: 12px;
+            }
+
+            .modal-header h2 {
+                font-size: 1.2em;
+            }
+        }
     </style>
 </head>
 <body>
@@ -553,6 +907,7 @@
                 <span>📅 Last Updated: March 23, 2026</span>
                 <span>👥 Target: Recruiters & HR Consultants</span>
                 <span>🎯 Version: 1.0</span>
+                <button id="editBtn" class="edit-btn" onclick="openEditor()">✏️ Edit Content</button>
             </div>
         </header>
 
@@ -1725,7 +2080,45 @@
                 </div>
             </section>
 
-        <!-- FOOTER -->
+
+        <!-- EDITOR MODAL -->
+        <div id="editorModal" class="editor-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>📝 Edit HTML Content</h2>
+                    <button class="close-btn" onclick="closeEditor()">&times;</button>
+                </div>
+                <div class="editor-info">
+                    <strong>ℹ️ Note:</strong> Edit the HTML content directly. Your changes will be reflected when you click "Save & Refresh". Be careful not to break HTML structure.
+                </div>
+                <textarea id="htmlEditor" placeholder="Paste or edit HTML content here..."></textarea>
+                <div class="modal-buttons">
+                    <button class="cancel-btn" onclick="closeEditor()">Cancel</button>
+                    <button class="save-btn" onclick="saveChanges()">💾 Save & Refresh</button>
+                </div>
+            </div>
+        </div>
+
+        
+        <!-- EDITOR MODAL -->
+        <div id="editorModal" class="editor-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>📝 Edit HTML Content</h2>
+                    <button class="close-btn" onclick="closeEditor()">&times;</button>
+                </div>
+                <div class="editor-info">
+                    <strong>ℹ️ Note:</strong> Edit the HTML content directly. Your changes will be reflected when you click "Save & Refresh". Be careful not to break HTML structure.
+                </div>
+                <textarea id="htmlEditor" placeholder="Paste or edit HTML content here..."></textarea>
+                <div class="modal-buttons">
+                    <button class="cancel-btn" onclick="closeEditor()">Cancel</button>
+                    <button class="save-btn" onclick="saveChanges()">💾 Save & Refresh</button>
+                </div>
+            </div>
+        </div>
+
+                <!-- FOOTER -->
         <footer>
             <p>🎯 ExamRoom.AI Job Aid - Recruiter & HR Consultant Guide</p>
             <p>Last Updated: March 23, 2026 | Version 1.0</p>
@@ -1775,6 +2168,144 @@
                 toggle.textContent = answer.classList.contains('expanded') ? '−' : '+';
             }
         }
+
+        // Editor Functions
+        function openEditor() {
+            const htmlEditor = document.getElementById('htmlEditor');
+            const modal = document.getElementById('editorModal');
+            htmlEditor.value = document.documentElement.outerHTML;
+            modal.style.display = 'block';
+            htmlEditor.focus();
+        }
+
+        function closeEditor() {
+            const modal = document.getElementById('editorModal');
+            modal.style.display = 'none';
+        }
+
+        function saveChanges() {
+            const htmlEditor = document.getElementById('htmlEditor');
+            const newContent = htmlEditor.value;
+            
+            if (!newContent.trim()) {
+                alert('Error: HTML content cannot be empty!');
+                return;
+            }
+
+            try {
+                // Validate basic HTML structure
+                if (!newContent.includes('<html') || !newContent.includes('</html>')) {
+                    alert('Warning: HTML structure may be incomplete. Save anyway?');
+                }
+
+                // Create a blob and trigger download
+                const blob = new Blob([newContent], { type: 'text/html' });
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'ExamRoom_Job_Aid_edited.html';
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+
+                alert('✅ Changes saved! The edited file has been downloaded as "ExamRoom_Job_Aid_edited.html". Replace your original file with this updated version.');
+                closeEditor();
+
+                // Reload the current view to show updated content
+                const tempContainer = document.createElement('div');
+                tempContainer.innerHTML = newContent;
+                document.body.innerHTML = newContent;
+                
+            } catch (error) {
+                alert('Error saving changes: ' + error.message);
+            }
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('editorModal');
+            if (event.target === modal) {
+                closeEditor();
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeEditor();
+            }
+        });
+
+
+        // Editor Functions
+        function openEditor() {
+            const htmlEditor = document.getElementById('htmlEditor');
+            const modal = document.getElementById('editorModal');
+            htmlEditor.value = document.documentElement.outerHTML;
+            modal.style.display = 'block';
+            htmlEditor.focus();
+        }
+
+        function closeEditor() {
+            const modal = document.getElementById('editorModal');
+            modal.style.display = 'none';
+        }
+
+        function saveChanges() {
+            const htmlEditor = document.getElementById('htmlEditor');
+            const newContent = htmlEditor.value;
+            
+            if (!newContent.trim()) {
+                alert('Error: HTML content cannot be empty!');
+                return;
+            }
+
+            try {
+                // Validate basic HTML structure
+                if (!newContent.includes('<html') || !newContent.includes('</html>')) {
+                    alert('Warning: HTML structure may be incomplete. Save anyway?');
+                }
+
+                // Create a blob and trigger download
+                const blob = new Blob([newContent], { type: 'text/html' });
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'ExamRoom_Job_Aid_edited.html';
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+
+                alert('✅ Changes saved! The edited file has been downloaded as "ExamRoom_Job_Aid_edited.html". Replace your original file with this updated version.');
+                closeEditor();
+
+                // Reload the current view to show updated content
+                const tempContainer = document.createElement('div');
+                tempContainer.innerHTML = newContent;
+                document.body.innerHTML = newContent;
+                
+            } catch (error) {
+                alert('Error saving changes: ' + error.message);
+            }
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('editorModal');
+            if (event.target === modal) {
+                closeEditor();
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeEditor();
+            }
+        });
+
     </script>
 </body>
 </html>
