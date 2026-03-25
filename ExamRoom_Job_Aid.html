@@ -158,6 +158,11 @@
             display: block;
         }
 
+        /* Nested panels inside a visible section (Service Terms articles, etc.) */
+        section.active section.article-section {
+            display: block;
+        }
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -819,284 +824,6 @@
                 font-size: 1.1em;
             }
         }
-
-        /* Edit Button and Modal Styles */
-        .edit-btn {
-            background: linear-gradient(135deg, #0052CC 0%, #00A699 100%);
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 0.9em;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0, 82, 204, 0.2);
-        }
-
-        .edit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 82, 204, 0.3);
-        }
-
-        .edit-btn:active {
-            transform: translateY(0);
-        }
-
-        /* Content Editor Modal Styles */
-        #editorModal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .modal-content {
-            background-color: #ffffff;
-            margin: 2% auto;
-            padding: 30px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            width: 90%;
-            height: 88vh;
-            max-width: 1000px;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #0052CC;
-            padding-bottom: 15px;
-        }
-
-        .modal-header h2 {
-            color: #0052CC;
-            margin: 0;
-            font-size: 1.4em;
-        }
-
-        .close-btn {
-            color: #999;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 0;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .close-btn:hover {
-            color: #000;
-        }
-
-        .editor-info {
-            background-color: #E7F3FF;
-            border: 1px solid #B3D9FF;
-            border-radius: 4px;
-            padding: 12px;
-            margin-bottom: 15px;
-            color: #003366;
-            font-size: 0.9em;
-            display: flex;
-            gap: 10px;
-        }
-
-        .editor-sections {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            margin-bottom: 15px;
-        }
-
-        .editor-tabs {
-            display: flex;
-            gap: 5px;
-            border-bottom: 2px solid #e0e0e0;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-        }
-
-        .tab-btn {
-            padding: 10px 15px;
-            border: none;
-            background-color: #f5f5f5;
-            color: #333;
-            cursor: pointer;
-            border-radius: 4px 4px 0 0;
-            font-weight: 500;
-            font-size: 0.9em;
-            transition: all 0.3s ease;
-            border-bottom: 3px solid transparent;
-        }
-
-        .tab-btn:hover {
-            background-color: #e8e8e8;
-        }
-
-        .tab-btn.active {
-            background-color: white;
-            color: #0052CC;
-            border-bottom-color: #0052CC;
-        }
-
-        .tab-content {
-            display: none;
-            flex: 1;
-            overflow-y: auto;
-            padding-right: 10px;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        .tab-content::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        .tab-content::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-
-        .tab-content::-webkit-scrollbar-thumb {
-            background: #0052CC;
-            border-radius: 4px;
-        }
-
-        .edit-field {
-            margin-bottom: 20px;
-        }
-
-        .edit-field label {
-            display: block;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 5px;
-            font-size: 0.95em;
-        }
-
-        .text-input, .text-area, .select-input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 0.95em;
-            color: #333;
-            box-sizing: border-box;
-        }
-
-        .text-input:focus, .text-area:focus, .select-input:focus {
-            outline: none;
-            border-color: #0052CC;
-            box-shadow: 0 0 5px rgba(0, 82, 204, 0.2);
-        }
-
-        .text-area {
-            resize: vertical;
-            min-height: 120px;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-        }
-
-        .select-input {
-            cursor: pointer;
-        }
-
-        small {
-            display: block;
-            color: #666;
-            font-size: 0.85em;
-            margin-top: 5px;
-        }
-
-        .section-selector {
-            margin-bottom: 15px;
-        }
-
-        #sectionEditArea {
-            border-top: 1px solid #e0e0e0;
-            padding-top: 15px;
-        }
-
-        .modal-buttons {
-            display: flex;
-            gap: 10px;
-            justify-content: flex-end;
-            border-top: 1px solid #e0e0e0;
-            padding-top: 15px;
-        }
-
-        .modal-buttons button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 0.95em;
-        }
-
-        .save-btn {
-            background: linear-gradient(135deg, #0052CC 0%, #00A699 100%);
-            color: white;
-        }
-
-        .save-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 82, 204, 0.3);
-        }
-
-        .cancel-btn {
-            background-color: #e0e0e0;
-            color: #333;
-        }
-
-        .cancel-btn:hover {
-            background-color: #d0d0d0;
-        }
-
-        @media (max-width: 768px) {
-            .modal-content {
-                width: 95%;
-                height: 92vh;
-                padding: 15px;
-            }
-
-            .editor-tabs {
-                flex-wrap: wrap;
-            }
-
-            .tab-btn {
-                font-size: 0.85em;
-                padding: 8px 12px;
-            }
-
-            .modal-header h2 {
-                font-size: 1.1em;
-            }
-        }
     </style>
 </head>
 <body>
@@ -1104,10 +831,11 @@
         <!-- HEADER -->
         <header>
             <h1>ExamRoom.AI Job Aid</h1>
-            <p class="subtitle">Comprehensive Guide for Recruiters & HR Consultants</p>
+            <p class="subtitle">Comprehensive Guide for Recruiters</p>
             <div class="metadata">
-                <span>📅 Last Updated: March 23, 2026</span>
-                <span>👥 Target: Recruiters & HR Consultants</span>
+                <span>📅 Last Updated: March 25, 2026</span>
+                <span>👥 Target: Recruiters</span>
+                <span>📚 Sections: 5 Core Topics</span>
                 <span>🎯 Version: 1.0</span>
                 <button id="editBtn" class="edit-btn" onclick="openEditor()">✏️ Edit Content</button>
             </div>
@@ -1121,6 +849,8 @@
                 <button class="nav-btn" onclick="showSection('platforms')">Platforms</button>
                 <button class="nav-btn" onclick="showSection('decision-guide')">Decision Guide</button>
                 <button class="nav-btn" onclick="showSection('startup-questions')">Startup Questions</button>
+                <button class="nav-btn" onclick="showSection('service-terms')">Service Terms</button>
+                <button class="nav-btn" onclick="showSection('reference-links')">Reference Links</button>
             </div>
         </nav>        <!-- SECTIONS -->
         <div class="sections-container">
@@ -1132,6 +862,33 @@
                 <div class="callout info">
                     <strong>📌 Quick Overview</strong>
                     This job aid provides step-by-step guidance on using ExamRoom.AI and Spark Hire platforms to efficiently screen, evaluate, and select candidates for your organization.
+                </div>
+
+                <h3 style="color: var(--primary-color); margin-top: 30px; margin-bottom: 15px;">📋 Document Contents</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 0.95em;">
+                    This guide contains 5 comprehensive sections. Click any section below to jump directly to it:
+                </p>
+                <div class="cards-grid" style="margin-bottom: 30px;">
+                    <div class="card" style="cursor: pointer;" onclick="showSection('purpose')">
+                        <h3 style="margin-top: 0; color: #0052CC;">📍 Purpose</h3>
+                        <p style="font-size: 0.9em; margin: 0;">Overview, audience, and pre-requisites</p>
+                    </div>
+                    <div class="card" style="cursor: pointer;" onclick="showSection('platforms')">
+                        <h3 style="margin-top: 0; color: #0052CC;">🔧 Platforms</h3>
+                        <p style="font-size: 0.9em; margin: 0;">ExamRoom.AI vs Spark Hire comparison</p>
+                    </div>
+                    <div class="card" style="cursor: pointer;" onclick="showSection('decision-guide')">
+                        <h3 style="margin-top: 0; color: #0052CC;">🧭 Decision Guide</h3>
+                        <p style="font-size: 0.9em; margin: 0;">Choose the right platform for your needs</p>
+                    </div>
+                    <div class="card" style="cursor: pointer;" onclick="showSection('startup-questions')">
+                        <h3 style="margin-top: 0; color: #0052CC;">🚀 Startup Questions</h3>
+                        <p style="font-size: 0.9em; margin: 0;">Configuration guide for ExamRoom.AI setup</p>
+                    </div>
+                    <div class="card" style="cursor: pointer;" onclick="showSection('service-terms')">
+                        <h3 style="margin-top: 0; color: #0052CC;">📜 Service Terms</h3>
+                        <p style="font-size: 0.9em; margin: 0;">Master Service Agreement & responsibilities</p>
+                    </div>
                 </div>
 
                 <div class="cards-grid">
@@ -1991,6 +1748,351 @@
                 </div>
             </section>
 
+            <!-- SERVICE TERMS SECTION -->
+            <section id="service-terms">
+                <h2>Service Terms & Responsibilities</h2>
+                <p class="section-subtitle">Master Service Agreement excerpts covering key obligations and payment terms</p>
+                
+                <div class="callout info">
+                    <strong>📋 Legal Framework</strong>
+                    This section outlines the core responsibilities and payment terms from the ExamRoom.AI Master Service Agreement, covering the obligations of both the Client and the Vendor, as well as payment terms and fees.
+                </div>
+
+                <!-- TRANSLATION EXAMS: PRICING & LIVE PROCTORING MODEL -->
+                <section class="article-section" style="background: linear-gradient(135deg, #F5F7FA 0%, #EBF0F8 100%); padding: 25px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #1F77FF;">
+                    <h3 style="margin-top: 0; color: #0052CC;">Translation exams: pricing and live proctoring model</h3>
+                    <p style="margin-bottom: 18px; color: var(--text-secondary);">The below solution was used for the translation exams.</p>
+
+                    <div class="practice-card" style="background: white; border: 1px solid #DDE5ED;">
+                        <h4>💲 Pricing (per exam, per candidate)</h4>
+                        <table class="comparison-table" style="margin-top: 12px;">
+                            <thead>
+                                <tr>
+                                    <th>Service</th>
+                                    <th>Rate</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Fully Live Proctoring</strong></td>
+                                    <td>$14.00 per exam, per candidate for the first hour; $4.00 per exam, per candidate for each additional hour after the first hour.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Customized Test Delivery Platform</strong></td>
+                                    <td>$30.00 per exam, per candidate.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Fully Automated</strong></td>
+                                    <td>$10.00 per exam, per candidate for the first hour; $4.00 per exam, per candidate for each additional hour after the first hour.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="practice-card" style="background: white; border: 1px solid #DDE5ED;">
+                        <h4>👥 Full Live Proctoring</h4>
+                        <p>Two separate humans are involved in the entire process: the first human acts as the <strong>Onboarding Agent (OBA)</strong> and the second human acts as the <strong>Proctor</strong>.</p>
+                    </div>
+
+                    <div class="practice-card" style="background: white; border: 1px solid #DDE5ED;">
+                        <h4>🪪 Role of Onboarding Agent</h4>
+                        <p><strong>Identity verification</strong> — photo ID, face scan, room scan, and additional verification features such as knuckle scan, Typing DNA, fingerprint, and voice recognition.</p>
+                    </div>
+
+                    <div class="practice-card" style="background: white; border: 1px solid #DDE5ED;">
+                        <h4>👁️ Live Proctoring</h4>
+                        <p>It involves live proctoring with AI assistance:</p>
+                        <ul style="margin-top: 10px;">
+                            <li>The proctor watches the entire session and provides any assistance or a password if needed; the proctor also flags instances while the AI captures cheating instances.</li>
+                            <li>Our system notifies the proctor if the candidate switches to another tab and if the candidate tries to use any restricted keys.</li>
+                            <li>The proctor can speak verbally to the candidate and chat with the candidate if needed, and can stop the test immediately for abhorrent behavior.</li>
+                            <li>We provide an option for the client or administrator to live barge into test sessions and to monitor the exam in real time.</li>
+                            <li>The video recordings of the exam session will be available in the client dashboard in less than 5 minutes; the recordings are available for 7 days in their system for download, and after 7 days we archive them for 6 months.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- ARTICLE 1: RESPONSIBILITIES OF CLIENT -->
+                <section class="article-section" style="background: linear-gradient(135deg, #F5F7FA 0%, #EBF0F8 100%); padding: 25px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #0052CC;">
+                    <h3 style="margin-top: 0; color: #0052CC;">ARTICLE I: RESPONSIBILITIES OF CLIENT</h3>
+                    
+                    <div class="practice-card" style="background: white; border: 1px solid #DDE5ED;">
+                        <h4>📝 Section 1.1: Examination Instructions Compliance</h4>
+                        <p>The Client shall ensure all candidates are provided with examination instructions and adhere to all examination procedures established by the Vendor. Candidates must comply with all examination rules, security protocols, and administrative requirements as set forth in the examination materials.</p>
+                    </div>
+
+                    <div class="practice-card" style="background: white; border: 1px solid #DDE5ED;">
+                        <h4>👤 Section 1.2: Candidate Contact Information</h4>
+                        <p>The Client is responsible for collecting and maintaining accurate candidate contact information, including:</p>
+                        <ul style="margin-top: 10px;">
+                            <li>Valid email address(es)</li>
+                            <li>Phone number (if required for the examination)</li>
+                            <li>Essential identification information as required</li>
+                        </ul>
+                    </div>
+
+                    <div class="practice-card" style="background: white; border: 1px solid #DDE5ED;">
+                        <h4>📋 Section 1.3: Exam Information</h4>
+                        <p>The Client shall provide complete examination information to candidates, including examination date, time, duration, and any special accommodations. Candidates must receive sufficient notice and preparation materials as outlined in the agreement.</p>
+                    </div>
+
+                    <div class="practice-card" style="background: white; border: 1px solid #DDE5ED;">
+                        <h4>📅 Section 1.4: Candidate Scheduling</h4>
+                        <p>The Client must schedule candidates a minimum of 72 hours in advance of the examination appointment. The Client remains responsible for ensuring candidates are aware of their scheduled examination date and time.</p>
+                    </div>
+
+                    <div class="practice-card" style="background: white; border: 1px solid #DDE5ED;">
+                        <h4>❌ Section 1.5: No Show and Rescheduling Policy</h4>
+                        <p>If a candidate fails to appear for a scheduled examination ("No Call-No Show"), the Client is responsible for notifying the Vendor. The Client must adhere to rescheduling policies, including any applicable fees for cancellations made within 24 hours of the scheduled appointment.</p>
+                    </div>
+
+                    <div class="practice-card" style="background: white; border: 1px solid #DDE5ED;">
+                        <h4>🚫 Section 1.6: Exam Cancellation</h4>
+                        <p>Exams may be cancelled up to 48 hours prior to the scheduled appointment without penalty. Cancellations within 48 hours may result in fees. The Client must follow the Vendor's cancellation procedures and may lose already-paid examination fees.</p>
+                    </div>
+
+                    <div class="practice-card" style="background: white; border: 1px solid #DDE5ED;">
+                        <h4>⏰ Section 1.7: Establishing the Examination Schedule</h4>
+                        <p>The Client is responsible for working with the Vendor to establish the overall examination schedule, ensuring all logistics are coordinated and approved by the Vendor before implementation.</p>
+                    </div>
+
+                    <div class="practice-card" style="background: white; border: 1px solid #DDE5ED;">
+                        <h4>💰 Section 1.8: Required Exam Fees</h4>
+                        <p>The Client is responsible for payment of all examination fees in accordance with the fee schedule outlined in Article 3 of this agreement. Payment terms and conditions are defined in the Vendor's fee structure.</p>
+                    </div>
+
+                    <div class="practice-card" style="background: white; border: 1px solid #DDE5ED;">
+                        <h4>🏥 Section 1.9: Exam Accommodation Request Processing</h4>
+                        <p>The Client shall process any examination accommodation requests from candidates in accordance with ADA and legal requirements, submitting documentation to the Vendor for approval and implementation.</p>
+                    </div>
+
+                    <div class="practice-card" style="background: white; border: 1px solid #DDE5ED;">
+                        <h4>🤝 Section 1.10: Candidate Support</h4>
+                        <p>The Client must provide candidates with adequate support, including clear communication about examination requirements, technical support contact information, and assistance with any pre-examination questions or concerns.</p>
+                    </div>
+
+                    <div class="practice-card" style="background: white; border: 1px solid #DDE5ED;">
+                        <h4>🔒 Section 1.11: Security Breach Assistance</h4>
+                        <p>The Client shall notify the Vendor immediately of any suspected security breaches, unauthorized access, or compromised examination integrity, and shall cooperate fully with the Vendor in investigating and remediating any security incidents.</p>
+                    </div>
+                </section>
+
+                <!-- ARTICLE 2: RESPONSIBILITIES OF VENDOR -->
+                <section class="article-section" style="background: linear-gradient(135deg, #F5F7FA 0%, #EBF0F8 100%); padding: 25px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #00A699;">
+                    <h3 style="margin-top: 0; color: #00A699;">ARTICLE II: RESPONSIBILITIES OF VENDOR - ONLINE EXAM PLATFORM FUNCTIONALITY</h3>
+                    
+                    <div class="practice-card" style="background: white; border: 1px solid #DDE5ED;">
+                        <h4>🛠️ Section 2.1: Software Support</h4>
+                        <p>The Vendor provides technical support for the ExamRoom.AI platform, including assistance with platform configuration, user account management, and troubleshooting of technical issues that arise during examination administration.</p>
+                    </div>
+
+                    <div class="practice-card" style="background: white; border: 1px solid #DDE5ED;">
+                        <h4>📚 Section 2.2: Software Training</h4>
+                        <p>The Vendor shall provide training and documentation to the Client on the proper use of the ExamRoom.AI platform, including administrator functions, candidate management, and reporting capabilities.</p>
+                    </div>
+
+                    <div class="practice-card" style="background: white; border: 1px solid #DDE5ED;">
+                        <h4>🎮 Section 2.3: Exam Delivery</h4>
+                        <p>The Vendor will deliver examinations via its secure online platform. The Vendor maintains the platform infrastructure and ensures examination content and candidate responses are securely managed. All examinations delivered through the platform are administered according to the Client's specifications and approved examination parameters.</p>
+                        <p><strong>Proctoring Options Available:</strong> The Vendor provides both supervised (Live Proctor) and fully automated examination delivery options. The Client will designate which delivery method applies to each examination based on security requirements.</p>
+                    </div>
+
+                    <div class="practice-card" style="background: white; border: 1px solid #DDE5ED;">
+                        <h4>📊 Section 2.4: Examination Information</h4>
+                        <p>The Vendor will provide comprehensive examination information including cut scores, test specifications, question difficulty levels, timing requirements, and candidate feedback options as configured by the Client.</p>
+                    </div>
+
+                    <div class="practice-card" style="background: white; border: 1px solid #DDE5ED;">
+                        <h4>💬 Section 2.5: Candidate Support</h4>
+                        <p>The Vendor offers 24/7 candidate support through multiple channels:</p>
+                        <ul style="margin-top: 10px;">
+                            <li><strong>Email:</strong> Standard response within business hours</li>
+                            <li><strong>Chat box support:</strong> Real-time assistance during examination windows</li>
+                            <li><strong>Phone:</strong> Support available for urgent technical issues during business hours</li>
+                        </ul>
+                    </div>
+
+                    <div class="practice-card" style="background: white; border: 1px solid #DDE5ED;">
+                        <h4>🌐 Section 2.6: Languages Supported</h4>
+                        <p>The Vendor supports English, Spanish, and Portuguese interfaces. Additional language support may be available upon request. The Vendor can configure the platform to deliver examinations in multiple languages and provide accommodations for non-English speaking candidates as required.</p>
+                    </div>
+
+                    <div class="practice-card" style="background: white; border: 1px solid #DDE5ED;">
+                        <h4>⚙️ Section 2.7: Onboarding of Examinations (Manual Process)</h4>
+                        <p>The Vendor provides comprehensive examination onboarding services (SME Review) including:</p>
+                        <ul style="margin-top: 10px;">
+                            <li>Subject Matter Expert (SME) review of examination content</li>
+                            <li>Technical setup of test items and question configurations</li>
+                            <li>Test specifications review (timing, difficulty, question types)</li>
+                            <li>Vendor quality assurance review</li>
+                            <li>Examination setup and delivery configuration</li>
+                            <li>Integration with Client's ATS and candidate management systems</li>
+                            <li>Final testing and validation before launch</li>
+                            <li>Ongoing support and maintenance</li>
+                        </ul>
+                    </div>
+
+                    <div class="practice-card" style="background: white; border: 1px solid #DDE5ED;">
+                        <h4>🤖 Section 2.8: Fully Automated Onboarding of Examinations</h4>
+                        <p>The Vendor offers automated onboarding capabilities that include:</p>
+                        <ul style="margin-top: 10px;">
+                            <li>AI-powered question importing and analysis</li>
+                            <li>Automated test specification validation</li>
+                            <li>Automated difficulty assessment</li>
+                            <li>Integration with Client's existing systems</li>
+                            <li>Self-service question bank management</li>
+                            <li>Automated scoring configuration</li>
+                            <li>Rapid deployment with reduced implementation time</li>
+                            <li>Technical support throughout the process</li>
+                        </ul>
+                    </div>
+
+                    <div class="practice-card" style="background: white; border: 1px solid #DDE5ED;">
+                        <h4>👁️ Section 2.9: Proctoring of Examinations</h4>
+                        <p>The Vendor offers supervised proctoring services including:</p>
+                        <ul style="margin-top: 10px;">
+                            <li>Remote live proctor monitoring through secure video connection</li>
+                            <li>Identity verification and candidate authentication</li>
+                            <li>Room scanning and environment monitoring</li>
+                            <li>ProctorFlags - automated alerts for suspicious behavior</li>
+                            <li>Complete examination recording and audit trail</li>
+                            <li>Proctor reports and incident documentation</li>
+                            <li>Secure evidence capture for disputes</li>
+                            <li>Integration with candidate management system</li>
+                        </ul>
+                    </div>
+
+                    <div class="practice-card" style="background: white; border: 1px solid #DDE5ED;">
+                        <h4>🤖 Section 2.9a: Fully Automated Proctoring of Examinations</h4>
+                        <p>The Vendor provides automated proctoring (AI-driven monitoring) with:</p>
+                        <ul style="margin-top: 10px;">
+                            <li>AI-powered behavior analysis and anomaly detection</li>
+                            <li>Automated flag detection for suspicious activity</li>
+                            <li>Facial recognition and identity verification</li>
+                            <li>Eye tracking to monitor focus during exam</li>
+                            <li>Automated reports with detailed findings</li>
+                            <li>Reduced proctor workload while maintaining security</li>
+                        </ul>
+                    </div>
+
+                    <div class="practice-card" style="background: white; border: 1px solid #DDE5ED;">
+                        <h4>📈 Section 2.10: Client Dashboard Access</h4>
+                        <p>The Vendor provides comprehensive dashboard access with real-time data including:</p>
+                        <ul style="margin-top: 10px;">
+                            <li>Candidate registration status</li>
+                            <li>Examination scheduling information</li>
+                            <li>Results and score reports</li>
+                            <li>Performance analytics and reports</li>
+                            <li>Question performance data</li>
+                            <li>Demographic analysis by group</li>
+                            <li>Audit trail and security logs</li>
+                            <li>Custom report generation</li>
+                        </ul>
+                    </div>
+
+                    <div class="practice-card" style="background: white; border: 1px solid #DDE5ED;">
+                        <h4>🎥 Section 2.11: Access to Digital Recordings</h4>
+                        <p>The Vendor maintains secure access to examination recordings for 7 years after examination completion. Clients may request recordings for quality assurance, dispute resolution, or compliance purposes. Recordings are available in secure formats and include:</p>
+                        <ul style="margin-top: 10px;">
+                            <li>Proctor-recorded video of live proctored exams</li>
+                            <li>Candidate identity verification recordings</li>
+                            <li>Room scan and environment verification</li>
+                            <li>Secure evidence for compliance or legal matters</li>
+                        </ul>
+                    </div>
+
+                    <div class="practice-card" style="background: white; border: 1px solid #DDE5ED;">
+                        <h4>🔧 Section 2.12: Data Request, Reviews, or Modifications</h4>
+                        <p>The Vendor shall provide Client with access to examination data upon request. The Vendor cooperates with Client FERPA, EEOC, and GDPR compliance requirements. All data requests are processed in accordance with applicable laws and the terms of this agreement.</p>
+                    </div>
+
+                    <div class="practice-card" style="background: white; border: 1px solid #DDE5ED;">
+                        <h4>🗑️ Section 2.13: Request for Data Deletion</h4>
+                        <p>Upon Client request and in accordance with applicable law, the Vendor shall facilitate the deletion of Client examination data. Deletion is subject to legal hold requirements and retention mandates, and the Client must provide written authorization for data deletion requests.</p>
+                    </div>
+                </section>
+
+                <!-- ARTICLE 3: PAYMENTS -->
+                <section class="article-section" style="background: linear-gradient(135deg, #F5F7FA 0%, #EBF0F8 100%); padding: 25px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #FFB81C;">
+                    <h3 style="margin-top: 0; color: #FFB81C;">ARTICLE III: PAYMENTS</h3>
+                    
+                    <div class="practice-card" style="background: white; border: 1px solid #DDE5ED;">
+                        <h4>💵 Section 3.1: Fees</h4>
+                        <p>The Client shall pay examination fees to the Vendor according to the following fee structure:</p>
+                        <ul style="margin-top: 10px;">
+                            <li><strong>Fully Live Proctoring:</strong> $14.00 per candidate per exam, plus $4.00 per candidate for support services</li>
+                            <li><strong>Fully Automated Proctoring:</strong> $10.00 per candidate per exam, plus $4.00 per candidate for support services</li>
+                        </ul>
+                        <p style="margin-top: 15px; font-style: italic; color: #5A6B7A;">Fees are based on the number of candidates taking the examination and the proctoring method selected. Additional fees may apply for special features or services.</p>
+                    </div>
+
+                    <div class="practice-card" style="background: white; border: 1px solid #DDE5ED;">
+                        <h4>➕ Section 3.2: Additional Fees</h4>
+                        <p>The Vendor reserves the right to charge additional fees for special services, including but not limited to: custom examination development, special accommodations, additional proctor training, data export services, and technical support beyond standard support levels.</p>
+                    </div>
+
+                    <div class="practice-card" style="background: white; border: 1px solid #DDE5ED;">
+                        <h4>💳 Section 3.3: Payment Terms and Method</h4>
+                        <p>The Vendor will provide invoices for examination fees. The Client agrees to pay invoices according to standard net payment terms. The Client may elect to pay via credit card, ACH transfer, wire transfer, or purchase order as arranged with the Vendor. All payment information, billing dates, and billing procedures will be specified in the Client's SLA addendum to this agreement.</p>
+                    </div>
+
+                    <div class="practice-card" style="background: white; border: 1px solid #DDE5ED;">
+                        <h4>⚖️ Section 3.4: Nonpayment and Late Payment</h4>
+                        <p>If the Client fails to pay any invoice by the due date, the Client shall be liable for applicable late fees and interest charges, in accordance with applicable law. If the Client's account remains unpaid for a significant period (typically 3+ months), the Vendor reserves the right to suspend examination services until payment is received in full.</p>
+                    </div>
+                </section>
+
+                <div class="callout warning" style="margin-top: 30px;">
+                    <strong>⚠️ Important Legal Notice:</strong> This section presents excerpts from the Master Service Agreement for informational purposes. For complete and binding obligations, refer to the full Master Service Agreement. In case of any conflict between this summary and the full agreement, the full agreement controls.
+                </div>
+
+                <div class="callout success" style="margin-top: 15px;">
+                    <strong>✅ Next Steps:</strong> Review these key responsibilities with your HR team and ensure understanding of both Client and Vendor obligations. Maintain compliance with the payment terms and deadlines to ensure uninterrupted access to ExamRoom.AI services.
+                </div>
+            </section>
+
+            <!-- REFERENCE LINKS SECTION -->
+            <section id="reference-links">
+                <h2>📚 Reference Links</h2>
+                <p class="section-subtitle">Quick access to important ExamRoom.AI documentation and resources</p>
+
+                <div class="cards-grid">
+                    <div class="card" style="cursor: pointer;">
+                        <h3 style="margin-top: 0; color: #0052CC;">📋 Exam Scheduling Manual</h3>
+                        <p style="font-size: 0.9em; margin: 8px 0; color: #00A699; word-break: break-all;">
+                            <a href="https://help.examroom.ai/en/article/remote-exam" target="_blank" style="color: #0052CC; text-decoration: none; font-weight: 500;">
+                                https://help.examroom.ai/en/article/remote-exam
+                            </a>
+                        </p>
+                        <p style="font-size: 0.85em; color: #5A6B7A; margin: 0;">Complete guide for scheduling remote exams and managing exam logistics</p>
+                    </div>
+
+                    <div class="card" style="cursor: pointer;">
+                        <h3 style="margin-top: 0; color: #0052CC;">🎓 Exam Day Manual</h3>
+                        <p style="font-size: 0.9em; margin: 8px 0; color: #00A699; word-break: break-all;">
+                            <a href="https://idb-help.examroom.ai/en/article/exam-day-user-guide-inter-american-development-bank-idb" target="_blank" style="color: #0052CC; text-decoration: none; font-weight: 500;">
+                                https://idb-help.examroom.ai/en/article/exam-day-user-guide-inter-american-development-bank-idb
+                            </a>
+                        </p>
+                        <p style="font-size: 0.85em; color: #5A6B7A; margin: 0;">User guide for exam day procedures and best practices for IDB candidates</p>
+                    </div>
+
+                    <div class="card" style="cursor: pointer;">
+                        <h3 style="margin-top: 0; color: #0052CC;">⚙️ Startup Questions</h3>
+                        <p style="font-size: 0.9em; margin: 8px 0; color: #00A699; word-break: break-all;">
+                            <a href="https://idbdocs.iadb.org/wsdocs/getdocument.aspx?docnum=EZIDB0000552-1432407019-567874" target="_blank" style="color: #0052CC; text-decoration: none; font-weight: 500;">
+                                https://idbdocs.iadb.org/wsdocs/getdocument.aspx?docnum=EZIDB0000552-1432407019-567874
+                            </a>
+                        </p>
+                        <p style="font-size: 0.85em; color: #5A6B7A; margin: 0;">Configuration and setup documentation for initial ExamRoom.AI deployment</p>
+                    </div>
+                </div>
+
+                <div class="callout success" style="margin-top: 30px;">
+                    <strong>✅ Quick Access:</strong> Use the links above for quick access to frequently needed resources. Bookmark these pages for easy reference during exam administration.
+                </div>
+            </section>
+
         <!-- CONTENT EDITOR MODAL -->
         <div id="editorModal" class="editor-modal">
             <div class="modal-content">
@@ -2065,130 +2167,8 @@
                                 <option value="purpose">Purpose</option>
                                 <option value="platforms">Platforms</option>
                                 <option value="decision-guide">Decision Guide</option>
-                                <option value="workflow">Workflow</option>
-                                <option value="best-practices">Best Practices</option>
-                                <option value="faq">FAQ</option>
                                 <option value="startup-questions">Startup Questions</option>
-                            </select>
-                        </div>
-                        <div id="sectionEditArea" style="display: none;">
-                            <div class="edit-field">
-                                <label id="sectionTitleLabel">Section Title</label>
-                                <input type="text" id="sectionTitle" placeholder="Section Title" class="text-input">
-                            </div>
-                            <div class="edit-field">
-                                <label id="sectionSubtitleLabel">Section Subtitle</label>
-                                <input type="text" id="sectionSubtitle" placeholder="Section description" class="text-input">
-                            </div>
-                            <div class="edit-field">
-                                <label>Section Content</label>
-                                <textarea id="sectionContent" placeholder="Enter section content here..." class="text-area"></textarea>
-                                <small>You can use basic formatting: Keep it as plain text or HTML tags like &lt;strong&gt;, &lt;em&gt;, &lt;ul&gt;, &lt;li&gt;</small>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Footer Tab -->
-                    <div id="footer-tab" class="tab-content">
-                        <div class="edit-field">
-                            <label>Footer Copyright/Tagline</label>
-                            <input type="text" id="footerTagline" placeholder="ExamRoom.AI Job Aid - Recruiter & HR Consultant Guide" class="text-input">
-                            <small>Main footer message</small>
-                        </div>
-                        <div class="edit-field">
-                            <label>Support Contact Info</label>
-                            <input type="text" id="footerContact" placeholder="Questions? Contact your HR or Recruiting Operations team for support." class="text-input">
-                            <small>How to reach for support</small>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="modal-buttons">
-                    <button class="cancel-btn" onclick="closeEditor()">Cancel</button>
-                    <button class="save-btn" onclick="saveContentChanges()">💾 Save Changes</button>
-                </div>
-            </div>
-        </div>
-
-        
-        <!-- CONTENT EDITOR MODAL -->
-        <div id="editorModal" class="editor-modal">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2>✏️ Edit Page Content</h2>
-                    <button class="close-btn" onclick="closeEditor()">&times;</button>
-                </div>
-                <div class="editor-info">
-                    <strong>ℹ️ Easy Editing:</strong> Select a section below and edit its content. Changes are saved automatically when you click "Save Changes".
-                </div>
-                
-                <div class="editor-sections">
-                    <div class="editor-tabs">
-                        <button class="tab-btn active" onclick="switchTab('header')">📄 Header</button>
-                        <button class="tab-btn" onclick="switchTab('navigation')">🧭 Navigation</button>
-                        <button class="tab-btn" onclick="switchTab('content')">📝 Content Sections</button>
-                        <button class="tab-btn" onclick="switchTab('footer')">📌 Footer</button>
-                    </div>
-
-                    <!-- Header Tab -->
-                    <div id="header-tab" class="tab-content active">
-                        <div class="edit-field">
-                            <label>Page Title (H1)</label>
-                            <input type="text" id="pageTitle" placeholder="ExamRoom.AI Job Aid" class="text-input">
-                            <small>Main heading at the top of the page</small>
-                        </div>
-                        <div class="edit-field">
-                            <label>Subtitle</label>
-                            <input type="text" id="pageSubtitle" placeholder="Comprehensive Guide for Recruiters & HR Consultants" class="text-input">
-                            <small>Brief description under the title</small>
-                        </div>
-                        <div class="edit-field">
-                            <label>Last Updated Date</label>
-                            <input type="text" id="lastUpdated" placeholder="March 23, 2026" class="text-input">
-                            <small>When was this guide last updated?</small>
-                        </div>
-                        <div class="edit-field">
-                            <label>Target Audience</label>
-                            <input type="text" id="targetAudience" placeholder="Recruiters & HR Consultants" class="text-input">
-                            <small>Who should read this guide?</small>
-                        </div>
-                        <div class="edit-field">
-                            <label>Version Number</label>
-                            <input type="text" id="versionNumber" placeholder="1.0" class="text-input">
-                            <small>Current version of the guide</small>
-                        </div>
-                    </div>
-
-                    <!-- Navigation Tab -->
-                    <div id="navigation-tab" class="tab-content">
-                        <div class="edit-field">
-                            <label>Navigation Title</label>
-                            <input type="text" id="navTitle" placeholder="📖 Quick Navigation" class="text-input">
-                            <small>Title shown above navigation buttons</small>
-                        </div>
-                        <div class="navigation-editor">
-                            <div class="edit-field">
-                                <label>Navigation Buttons</label>
-                                <div id="navButtons" class="nav-buttons-list"></div>
-                                <small>Edit button labels below (one per line)</small>
-                                <textarea id="navButtonsList" placeholder="Purpose&#10;Platforms&#10;Decision Guide&#10;Workflow&#10;Best Practices&#10;FAQ&#10;Startup Questions" class="text-area"></textarea>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Content Tab -->
-                    <div id="content-tab" class="tab-content">
-                        <div class="section-selector">
-                            <label>Select Section to Edit:</label>
-                            <select id="sectionSelector" onchange="loadSectionContent()" class="select-input">
-                                <option value="">-- Choose a section --</option>
-                                <option value="purpose">Purpose</option>
-                                <option value="platforms">Platforms</option>
-                                <option value="decision-guide">Decision Guide</option>
-                                <option value="workflow">Workflow</option>
-                                <option value="best-practices">Best Practices</option>
-                                <option value="faq">FAQ</option>
-                                <option value="startup-questions">Startup Questions</option>
+                                <option value="service-terms">Service Terms</option>
                             </select>
                         </div>
                         <div id="sectionEditArea" style="display: none;">
@@ -2235,6 +2215,10 @@
             <p>🎯 ExamRoom.AI Job Aid - Recruiter & HR Consultant Guide</p>
             <p>Last Updated: March 23, 2026 | Version 1.0</p>
             <p>Questions? Contact your HR or Recruiting Operations team for support.</p>
+            <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.2);">
+                <button onclick="showSection('purpose'); window.scrollTo({top: 0, behavior: 'smooth'});" style="background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.4); padding: 8px 16px; border-radius: 4px; cursor: pointer; transition: all 0.3s ease; font-weight: 500;">↑ Back to Top</button>
+                <p style="font-size: 0.85em; margin-top: 12px; opacity: 0.8;">📋 5 core sections | 🎯 Decision framework | ⚖️ Service terms included</p>
+            </div>
         </footer>
     </div>
 
