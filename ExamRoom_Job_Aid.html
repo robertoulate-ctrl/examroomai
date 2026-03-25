@@ -835,7 +835,7 @@
             <div class="metadata">
                 <span>📅 Last Updated: March 25, 2026</span>
                 <span>👥 Target: Recruiters</span>
-                <span>📚 Sections: 5 Core Topics</span>
+                <span>📚 Sections: 6 Core Topics</span>
                 <span>🎯 Version: 1.0</span>
                 <button id="editBtn" class="edit-btn" onclick="openEditor()">✏️ Edit Content</button>
             </div>
@@ -849,6 +849,7 @@
                 <button class="nav-btn" onclick="showSection('platforms')">Platforms</button>
                 <button class="nav-btn" onclick="showSection('decision-guide')">Decision Guide</button>
                 <button class="nav-btn" onclick="showSection('startup-questions')">Startup Questions</button>
+                <button class="nav-btn" onclick="showSection('candidates-templates')">Candidates Templates</button>
                 <button class="nav-btn" onclick="showSection('service-terms')">Service Terms</button>
                 <button class="nav-btn" onclick="showSection('reference-links')">Reference Links</button>
             </div>
@@ -866,7 +867,7 @@
 
                 <h3 style="color: var(--primary-color); margin-top: 30px; margin-bottom: 15px;">📋 Document Contents</h3>
                 <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 0.95em;">
-                    This guide contains 5 comprehensive sections. Click any section below to jump directly to it:
+                    This guide contains 6 comprehensive sections. Click any section below to jump directly to it:
                 </p>
                 <div class="cards-grid" style="margin-bottom: 30px;">
                     <div class="card" style="cursor: pointer;" onclick="showSection('purpose')">
@@ -884,6 +885,10 @@
                     <div class="card" style="cursor: pointer;" onclick="showSection('startup-questions')">
                         <h3 style="margin-top: 0; color: #0052CC;">🚀 Startup Questions</h3>
                         <p style="font-size: 0.9em; margin: 0;">Configuration guide for ExamRoom.AI setup</p>
+                    </div>
+                    <div class="card" style="cursor: pointer;" onclick="showSection('candidates-templates')">
+                        <h3 style="margin-top: 0; color: #0052CC;">✉️ Candidates Templates</h3>
+                        <p style="font-size: 0.9em; margin: 0;">Registration, scheduled confirmation, assign email</p>
                     </div>
                     <div class="card" style="cursor: pointer;" onclick="showSection('service-terms')">
                         <h3 style="margin-top: 0; color: #0052CC;">📜 Service Terms</h3>
@@ -1748,6 +1753,42 @@
                 </div>
             </section>
 
+            <!-- CANDIDATES TEMPLATES SECTION -->
+            <section id="candidates-templates">
+                <h2>Candidate Email Templates</h2>
+                <p class="section-subtitle">Registration Email, Scheduled Confirmation and Assign Email</p>
+
+                <div class="cards-grid" style="margin-top: 18px;">
+                    <div class="card" style="padding: 18px; border: 1px solid #DDE5ED;">
+                        <h3 style="margin-top: 0; color: #0052CC;">📝 Registration Email</h3>
+                        <p style="font-size: 0.9em; margin: 6px 0 12px; color: var(--text-secondary);">Preview (open to zoom)</p>
+                        <a href="Registration%20Email.png" target="_blank" rel="noopener noreferrer" style="display: block;">
+                            <img src="Registration%20Email.png" alt="Registration Email template preview" style="width: 100%; border-radius: 8px; border: 1px solid #DDE5ED; background: white;">
+                        </a>
+                    </div>
+
+                    <div class="card" style="padding: 18px; border: 1px solid #DDE5ED;">
+                        <h3 style="margin-top: 0; color: #0052CC;">📩 Scheduled Confirmation</h3>
+                        <p style="font-size: 0.9em; margin: 6px 0 12px; color: var(--text-secondary);">Preview (open to zoom)</p>
+                        <a href="Scheduled%20Confirmation.png" target="_blank" rel="noopener noreferrer" style="display: block;">
+                            <img src="Scheduled%20Confirmation.png" alt="Scheduled Confirmation template preview" style="width: 100%; border-radius: 8px; border: 1px solid #DDE5ED; background: white;">
+                        </a>
+                    </div>
+
+                    <div class="card" style="padding: 18px; border: 1px solid #DDE5ED;">
+                        <h3 style="margin-top: 0; color: #0052CC;">✉️ Assign Email</h3>
+                        <p style="font-size: 0.9em; margin: 6px 0 12px; color: var(--text-secondary);">Preview (open to zoom)</p>
+                        <a href="Assign%20Email.png" target="_blank" rel="noopener noreferrer" style="display: block;">
+                            <img src="Assign%20Email.png" alt="Assign Email template preview" style="width: 100%; border-radius: 8px; border: 1px solid #DDE5ED; background: white;">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="callout info" style="margin-top: 25px;">
+                    <strong>📌 Usage:</strong> Use these previews as reference when communicating with candidates.
+                </div>
+            </section>
+
             <!-- SERVICE TERMS SECTION -->
             <section id="service-terms">
                 <h2>Service Terms & Responsibilities</h2>
@@ -2168,6 +2209,7 @@
                                 <option value="platforms">Platforms</option>
                                 <option value="decision-guide">Decision Guide</option>
                                 <option value="startup-questions">Startup Questions</option>
+                                <option value="candidates-templates">Candidates Templates</option>
                                 <option value="service-terms">Service Terms</option>
                             </select>
                         </div>
